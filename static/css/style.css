@@ -1,0 +1,187 @@
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue","Helvetica",PingFang SC,PingFang TC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,"WenQuanYi Micro Hei",sans-serif;
+  font-size: 15px;
+  color: #555;
+}
+
+.container {
+  padding: 16px 16px;
+}
+
+a { color: #0645ad; text-decoration: none; }
+a:visited { color: #0645ad; }
+a:hover { color: #06e; }
+a:active { color: #06e; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.index h2 {
+  font-size: 22px;
+  margin: 20px 0 18px;
+  border: none;
+}
+
+.index ul {
+  -webkit-padding-start: 20px;
+  margin: 0 0;
+}
+
+.index ul li {
+  padding-bottom: 2px;
+}
+
+.title, .page_title {
+  font-size: 24px;
+  color: #333;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+h1 {
+  margin: 20px 0 18px;
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  margin: 20px 0 15px;
+  border-bottom: 1px dashed #e8e8e8;
+}
+
+h3 {
+  margin: 15px 0 15px;
+  font-size: 20px;
+}
+
+h4 {
+  margin: 15px 0 15px;
+  font-size: 18px;
+}
+
+h5, h6 {
+  margin: 15px 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+footer {
+  padding: 0px 16px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #787878;
+}
+
+#header {
+  padding-bottom: 15px;
+  font-size: 14px;
+  color: #787878;
+}
+
+#header .updated {
+  float: right;
+}
+
+/* Optimization for pre and code tag */
+pre, code {
+  font-family: "Source code pro", Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, monospace;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  overflow: auto;
+  background-color: #f8f8f8;
+}
+
+code {
+  padding: 1px 2px;
+}
+
+blockquote {
+  padding: 0px 15px;
+  margin: 15px 0;
+  border-left: 2px solid rgba(40, 50, 60, 0.85);
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+blockquote p {
+  margin: 0 0 10px 0;
+  color: #8a8a8a;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+pre {
+  padding: 8px;
+  margin: 16px 0;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  font-size: 90%;
+}
+
+code {
+  padding: 4px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  font-size: 90%;
+  color: #333;
+}
+
+/* Table of Contents */
+.toc {
+  margin: 15px 0 0;
+  padding: 8px 8px;
+  border: 1px solid #e8e8e8;
+  background-color: #ecf5ff;
+  float: right;
+  display: block;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.toc > .toctitle {
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.toc ul {
+  -webkit-padding-start: 20px;
+  margin: 0 0;
+}
+
+ul, ol {
+  -webkit-padding-start: 20px;
+}
+
+/* Hackers */
+/* Hacker for codehilite */
+
+/* Clear the float problem */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+  content: ".";
+  display: block;
+  height: 0;
+}
