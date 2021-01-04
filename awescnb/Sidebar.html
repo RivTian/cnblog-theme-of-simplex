@@ -1,0 +1,89 @@
+<script src="https://guangzan.gitee.io/awescnb/index.js"></script>
+<script>
+    $.awesCnb({
+        theme: {
+            name: 'geek',
+            avatar: 'https://pic.cnblogs.com/avatar/1849509/20201230203419.png',
+            favicon: 'https://gitee.com/riotian/blogimage/raw/master/img/20200528214553.png',
+            headerBackground: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210104130628.jpg'
+        },
+        //进入博客的提示
+        notice: {
+            enable: true,
+            text: ['ヾ(≧▽≦*)o 欢迎来到RioTianの小窝'],
+        },
+        //个性签名
+        signature: {
+            enable: true,
+            contents: [
+                "<b style='color:#F56C6C'>Hi</b>,<b style='color:#909399' size:7em>欢迎来到</b><i><b style='color:#F56C6C'>Rio</b><b style='color:#409EFF'>Tian</b></i><b style='color:#909399' size:7em>の博客</b>.</br><b style='color:#E6A23C'>Welcome(🍺);</b>",
+            ],
+        },
+        //头部进度条
+        topProgress: {
+            enable: true,
+            page: 'all',
+            agent: 'pc',
+            background: '#FFB3CC',
+            height: '5px',
+        },
+        //捐赠
+        donation: {
+            enable: true,
+            qrcodes: ['https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20201110153805.png',
+                'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20201110153813.png',
+            ],
+        },
+        // 右下角按钮列表
+        tools: {
+            enable: true,
+            initialOpen: true,
+            draggable: false,
+        },
+        // 返回顶部按钮
+        back2top: {
+            enable: true,
+            type: 'complex',
+        },
+        // 音乐播放器
+        musicPlayer: {
+            enable: true,
+            page: 'all',
+            agent: 'pc',
+            autoplay: false,
+            volume: 0.4,
+            lrc: {
+                enable: false, // 启用歌词
+                type: 1, // 1 -> 字符串歌词 3 -> url 歌词
+                color: '', // 颜色
+            },
+            audio: [{
+                name: '恋ってもどかしい',
+                artist: '光宗信吉',
+                url: 'http://music.163.com/song/media/outer/url?id=28191027.mp3',
+                cover: 'https://gitee.com//riotian/blogimage/raw/master/img/20200725223851.png',
+                lrc: `[00:00.00] 暂无歌词`,
+            }, ],
+        },
+        // github图标
+        github: {
+            enable: true,
+            color: '#ffb3cc',
+            url: 'https://github.com/RivTian',
+        },
+        links: [{
+            name: 'blog-articles',
+            link: 'https://github.com/RivTian/blog-articles',
+        }, ],
+        //随笔结尾签名
+        postSignature: {
+            enable: true,
+            enableLicense: true,
+            content: ['博主撰文不易，转载还请注明出处；若对本文有疑，请私信或在下方讨论中提出。O(∩_∩)O谢谢！',
+                '『At last：非常一(hu)本(shuo)正(ba)经(dao)的：博主很笨，请不要欺负他』'
+            ],
+            licenseName: '',
+            licenseLink: '',
+        },
+    });
+</script>
