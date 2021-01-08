@@ -1,0 +1,56 @@
+<script src="https://guangzan.gitee.io/awescnb/index.js"></script>
+<script>
+    $.awesCnb({
+        theme: {
+            name: 'view',
+            avatar: 'https://pic.cnblogs.com/avatar/1849509/20200722110146.png',
+            favicon: 'https://gitee.com/riotian/blogimage/raw/master/img/20200528214553.png'
+        },
+        notice: {
+            enable: true,
+            text: ['ヾ(≧▽≦*)o 欢迎来到RioTianの小窝'],
+        },
+        // 右下角按钮列表
+        tools: {
+            enable: true,
+            initialOpen: true,
+            draggable: false,
+        },
+        // 返回顶部按钮
+        back2top: {
+            enable: true,
+            type: 'complex',
+        },
+        // 音乐播放器
+        musicPlayer: {
+            enable: true,
+            page: 'all',
+            agent: 'pc',
+            autoplay: false,
+            volume: 0.4,
+            lrc: {
+                enable: false, // 启用歌词
+                type: 1, // 1 -> 字符串歌词 3 -> url 歌词
+                color: '', // 颜色
+            },
+            audio: [{
+                name: '恋ってもどかしい',
+                artist: '光宗信吉',
+                url: 'http://music.163.com/song/media/outer/url?id=28191027.mp3',
+                cover: 'https://gitee.com//riotian/blogimage/raw/master/img/20200725223851.png',
+                lrc: `[00:00.00] 暂无歌词`,
+            }, ],
+        },
+        // github图标
+        github: {
+            enable: true,
+            color: '#ffb3cc',
+            url: 'https://github.com/RivTian',
+        },
+        links: [{
+            name: 'blog-articles',
+            link: 'https://github.com/RivTian/blog-articles',
+        }, ],
+
+    });
+</script>

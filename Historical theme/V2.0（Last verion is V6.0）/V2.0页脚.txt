@@ -1,0 +1,54 @@
+<script type="text/javascript">
+        /* 鼠标点击文字特效 */
+        var a_idx = 0;
+        jQuery(document).ready(function ($) {
+            $("body").click(function (e) {
+                var a = [
+                    "小天天","技术宅","小鸟游六花","robotmaster","ACMer","萝莉","人工智能","小白","四糸乃","Terminal","图论","数论","为了女儿说不定连魔王都能干掉","一生只为机器人","一生只为人工智能"
+                ];
+                var b = [
+                    "#FFF68F", "#FFBBFF", "#FF0000", "#FF00FF", "#F08080",
+                    "#008000", "#7FFFAA", "#0000CD", "#0000FF", "#080808"
+                ];
+                var a_index = Math.floor((Math.random() * a.length));
+                var b_index = Math.floor((Math.random() * b.length));
+ 
+                var color = b[b_index];
+                var $i = $("<span/>").text(a[a_index]);
+                /* a_idx = (a_idx + 1) % a.length; */
+                var x = e.pageX,
+                    y = e.pageY;
+ 
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": color,
+                });
+                $("body").append($i);
+                $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                }, 1500, function () {
+                    $i.remove();
+                });
+            });
+        });
+    </script>
+
+<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+<script>tpwidget("init", {
+    "flavor": "bubble",
+    "location": "WWE0TGW4PX6N",
+    "geolocation": "enabled",
+    "position": "top-right",
+    "margin": "10px 10px",
+    "language": "zh-chs",
+    "unit": "c",
+    "theme": "chameleon",
+    "uid": "U7723B164C",
+    "hash": "554f0133ab6532c8a7724fcc5cc06361"
+});
+tpwidget("show");</script>

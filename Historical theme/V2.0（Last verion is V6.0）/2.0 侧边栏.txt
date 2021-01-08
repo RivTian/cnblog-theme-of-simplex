@@ -1,0 +1,64 @@
+<script src="https://blog-static.cnblogs.com/files/RioTian/silence.min.js"></script>
+<script type="text/javascript">
+    $.silence({
+        avatar: '',
+        favicon: 'https://images.cnblogs.com/cnblogs_com/Kanna/1633523/o_200222030111QQ%E5%9B%BE%E7%89%8720200222110052.png',
+        navigation: [
+            {
+                title: '归档',
+                url: 'https://www.cnblogs.com/RioTian/p/'
+            },
+            {
+                title: '喂食',
+                url: 'https://www.cnblogs.com/RioTian/p/12756291.html'
+            },
+            {
+                title: '导航',
+                url: 'https://yafine-blog.cn/box/'
+            },
+            {
+                title: '友链',
+                chilren: [
+                    {
+                        title: '111qqz小窝',
+                        url: 'https://111qqz.com/acm/',
+                    },
+                    {
+                        title: '码农场',
+                        url: 'https://www.hankcs.com/',
+                    },
+		    {
+                      title:'面向信仰编程',
+                      url:'https://draveness.me/'
+                    },
+                ]
+            },
+        ],
+        catalog: {
+            enable: true,
+            move: true,
+            index: true,
+            level1: 'h2',
+            level2: 'h3',
+            level3: 'h4',
+        },
+        signature: {
+            enable: true,
+            auther: 'RioTian',
+            license: '署名-非商业性使用-相同方式共享 4.0 国际',
+            link: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+            remark: null
+        },
+        sponsor: {
+            enable: true,
+            paypal: null,
+            wechat: 'https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_20042314542939ca006b2d67bdfc35d9853b811f5b1e.png',
+            alipay: 'https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_2004231454344d3ccdfc148147314e80a69fc8315315.png'
+        },
+        github: {
+            enable: true,
+            link: 'https://github.com/RivTian',
+	    target: '_self'
+        }
+    });
+</script>

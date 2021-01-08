@@ -1,0 +1,37 @@
+<!-- 地址栏logo-->
+<script>
+  $(function () {
+    // change the browser tab icon
+    var links = document.getElementsByTagName('link');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].rel.toUpperCase() == 'SHORTCUT ICON') {
+        links[i].href = 'https://gitee.com/riotian/blogimage/raw/master/img/20200528214553.png';
+        break;
+      }
+    }
+  });
+</script>
+
+<!-- Github-->
+<a href="https://github.com/rivtian">
+<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+
+<!-- 返回顶部功能-->
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "返回顶部", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
+        //IE6下的定位
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();
+</script>

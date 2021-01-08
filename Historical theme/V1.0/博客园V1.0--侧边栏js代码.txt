@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    window.cnblogsConfig = {
+        GhUserName: 'Kanna-jiahe',
+        GhVersions    : 'a669ed457833b9483d8839624f47fd550ed4f369', // 版本
+        blogUser      : "RioTian", // 用户名
+        blogAvatar    : "https://pic.cnblogs.com/avatar/1849509/20200303114923.png", // 用户头像
+        blogStartDate : "2019-10-27", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
+        fontIconExtend: "//at.alicdn.com/t/font_543384_ezv3l7gd9r7.css",
+        menuUserInfoBgImg:"https://images.cnblogs.com/cnblogs_com/Kanna/1633523/o_20022503021166492550_p0_master1200.jpg",
+         homeTopImg: [
+             "http://pic1.win4000.com/wallpaper/2020-01-13/5e1c26bb93935.jpg",
+         ],
+         essayTopImg: [
+            "https://images.cnblogs.com/cnblogs_com/Kanna/1633523/o_2002220402041553150707_666610.jpg"
+         ],
+         essaySuffix: {
+           aboutHtml    : "这里是个萌新"
+         },
+         homeBannerText: "爱学姐，爱学妹",
+         webpageIcon: "https://images.cnblogs.com/cnblogs_com/Kanna/1633523/o_200222030111QQ%E5%9B%BE%E7%89%8720200222110052.png",
+         menuNavList: [ // 列表数据 ['导航名称', '链接']
+           ['Github', 'https://github.com/Kanna-jiahe'],
+           ['博客园', 'https://www.cnblogs.com/'],
+        ]
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/gh/Kanna-jiahe/Cnblogs-Theme-SimpleMemory@a669ed457833b9483d8839624f47fd550ed4f369/src/script/simpleMemory.min.js"></script>
