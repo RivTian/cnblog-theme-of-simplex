@@ -1,5 +1,5 @@
-<!-- 地址栏logo-->
-<script type="text/javascript">
+<!-- 地址栏logo 由于侧边栏设定中已经嵌入Logo，这里就不必要加了-->
+<!-- <script type="text/javascript">
     $(function () {
         // change the browser tab icon
         var links = document.getElementsByTagName('link');
@@ -10,8 +10,10 @@
             }
         }
     });
-</script>
+</script> -->
+
 <!-- 点击特效-->
+<!-- 禁用 Z-index，防止与快速置顶冲突 -->
 <script type="text/javascript">
     var a_idx = 0;
     jQuery(document).ready(function ($) {
@@ -36,7 +38,7 @@
                 y = e.pageY;
 
             $i.css({
-                "z-index": 1234,
+                // "z-index": 10, // 禁用 Z-index，防止与快速置顶冲突
                 "top": y - 20,
                 "left": x,
                 "position": "absolute",
