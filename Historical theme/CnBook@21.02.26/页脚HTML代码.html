@@ -1,0 +1,536 @@
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.js"></script>
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script src="https://blog-static.cnblogs.com/files/gshang/gshang.owo.2020.01.05.1.js"></script>
+<script src="https://blog-static.cnblogs.com/files/ctgu/perfect-scrollbar.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+<script src="https://blog-static.cnblogs.com/files/gshang/sidebarContent.js"></script>
+<script src="https://blog-static.cnblogs.com/files/gshang/highlight.pack.js"></script>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<!--<script src="https://files.cnblogs.com/files/gshang/gs.js"></script>-->
+
+
+<script>
+  // 参数初始化
+  var ele = new Vue({});
+  var windowTop = 0;
+
+  $(function () {
+    // 基础组件初始化
+    basicInit();
+    // 其他初始化
+    if ($("#topics").length > 0) {
+      magicMarkdown(); // 魔法注释
+      blogPostTitle(); // 博客正文标题背景图
+      // $("#loading-container").fadeToggle("fast");
+      postBasicSetting(); // 博客基本样式初始化
+      setSideContent(); // 侧边目录
+      contentActiveListen(); // 侧边目录滚动激活
+      setCommet(); // 评论区
+    } else {
+      // entryPostTitle();  随笔分类背景图
+      //  $("#loading-container").fadeToggle("fast");
+    }
+    //setProfile(); // 公告信息
+    btnClick(); // 点击事件
+    copyCodeTip(); // 代码复制提示
+    scrollListen(); // 滚动监听事件
+    myscroll(); // 平滑滚动控制
+  });
+  /* 初始化 */
+  basicInit = function () {
+    // 博客 favicon
+    $("#favicon").replaceWith(
+      '<link rel="shortcut icon" href="https://gitee.com//riotian/blogimage/raw/master/img/20210119152411.png">'
+    );
+
+    // 初始化主题样式
+    if ($.cookie("theme") == null) {
+      $.cookie("theme", "light", {
+        expires: 30,
+        path: "/",
+        domain: "cnblogs.com",
+      });
+    }
+    if ($.cookie("theme") == "dark") {
+      document.documentElement.setAttribute("theme", "dark");
+    }
+
+    // 全屏黑幕
+    $("#main").append('<div class="mask"></div>');
+
+    // 侧边悬浮按钮
+    $("#home").append(
+      '<div class="float-btn"><ul>' +
+      '<li class="btn-top"><a href="#top"></a></li>' +
+      '<li class="btn-theme"><a href="javascript:changeTheme()"></a></li>' +
+      '<li class="btn-main"><a href="javascript:sidebarToggle()"></a></li>' +
+      "</ul></div>"
+    );
+  };
+
+  /* 魔法注释 */
+  magicMarkdown = function () {
+    // 添加 html 代码
+    $("code.language-html").each(function () {
+      if ($(this).text().split("\n")[0] == "<!-- run -->") {
+        $("#cnblogs_post_body").append($(this).text());
+        $(this).parent().remove();
+      }
+    });
+
+    // 添加 js 代码
+    $("code.language-html").each(function () {
+      if ($(this).text().split("\n")[0] == "<!-- script -->") {
+        $("head").append($(this).text());
+        $(this).parent().remove();
+      }
+    });
+
+    // 运行脚本
+    $("code.language-js").each(function () {
+      if ($(this).text().split("\n")[0] == "// run") {
+        window.eval($(this).text());
+        $(this).parent().remove();
+      }
+    });
+  };
+
+  /* 按钮点击事件 */
+  btnClick = function () {
+    // 侧边开关
+    $("#sidebar-toggler,.mask").click(function () {
+      sidebarToggle();
+    });
+    // 移动端目录点击隐藏
+    $(".nav a").click(function () {
+      var w = document.body.clientWidth;
+      if (w <= 1200) {
+        sidebarToggle();
+      }
+    });
+  };
+
+  /* 博客正文标题背景图 */
+  blogPostTitle = function () {
+    if ($("#cnblogs_post_description .desc_img").length > 0) {
+      $("#mainContent").prepend('<div class="post-header"></div>');
+      $(".post-header").append($(".postTitle"));
+      $(".post-header").append($(".postDesc"));
+      $(".post-header").css(
+        "background",
+        "url(" + $("#cnblogs_post_description .desc_img").attr("src") + ")"
+      );
+    }
+  };
+
+  /* 随笔分类背景图 */
+  entryPostTitle = function () {
+    if ($(".entrylistDescription .desc_img").length > 0) {
+      $("#mainContent").prepend('<div class="post-header"></div>');
+      $(".post-header").append($(".entrylistTitle"));
+      $(".post-header").append($(".entrylistDescription"));
+      $(".post-header").css(
+        "background",
+        "url(" + $(".entrylistDescription .desc_img").attr("src") + ")"
+      );
+    }
+  };
+
+  /* 切换主题 */
+  changeTheme = function () {
+    if ($.cookie("theme") == "light") {
+      $.cookie("theme", "dark", {
+        expires: 30,
+        path: "/",
+        domain: "cnblogs.com",
+      });
+      document.documentElement.setAttribute("theme", "dark");
+    } else {
+      $.cookie("theme", "light", {
+        expires: 30,
+        path: "/",
+        domain: "cnblogs.com",
+      });
+      document.documentElement.removeAttribute("theme", "dark");
+    }
+  };
+
+  /* 侧边开关 */
+  sidebarToggle = function () {
+    $("body").toggleClass("main-widthout-sidebar");
+  };
+
+  /* 侧边显示 */
+  showSide = function () {
+    $("#sideBar").removeClass("content-active");
+    $("#sideBar").addClass("side-active");
+  };
+
+  /* 目录显示 */
+  showContent = function () {
+    $("#sideBar").removeClass("side-active");
+    $("#sideBar").addClass("content-active");
+
+  };
+
+  /* 平滑滚动控制 */
+  myscroll = function () {
+    $("a[href*=\\#],area[href*=\\#]").click(function () {
+      if (
+        location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+        location.hostname == this.hostname
+      ) {
+        var $target = $(this.hash);
+        $target =
+          ($target.length && $target) || $("[name=" + this.hash.slice(1) + "]");
+        if ($target.length) {
+          var targetOffset = $target.offset().top;
+          $("html,body").animate({
+              scrollTop: targetOffset - 70,
+            },
+            500
+          );
+          return false;
+        }
+      }
+    });
+  };
+
+  // 滚动监听事件
+  scrollListen = function () {
+    $(window).scroll(function () {
+      var scrolls = $(this).scrollTop();
+      if (scrolls >= windowTop) {
+        //当scrolls>windowTop时，表示页面在向下滑动
+        $(".float-btn").addClass("float-btn-hide");
+        // if ($("#topics").length > 0 && scrolls > $(".postTitle").offset().top) {
+        $("#header").addClass("header-hidde");
+        //}
+        windowTop = scrolls;
+      } else {
+        $(".float-btn").removeClass("float-btn-hide");
+        $("#header").removeClass("header-hidde");
+        windowTop = scrolls;
+      }
+    });
+  };
+
+  postBasicSetting = function () {
+    // 代码高亮
+    $("pre code").each(function (i, block) {
+      hljs.highlightBlock(block);
+    });
+    // 表格滚动
+    $("table").each(function () {
+      $(this).css("cssText", "width:100%!important;display:table;");
+      $(this).wrapAll('<div class="tablebox"></div>');
+      $(".tablebox").css("overflow", "auto");
+    });
+
+    // 新窗口打开链接
+    $('#cnblogs_post_body a[href^="http"]').each(function () {
+      $(this).attr("target", "_blank");
+    });
+    // 侧边悬浮评论按钮
+    $(".btn-theme").after(
+      '<li class="btn-comment"><a href="#comment_form_container"></a></li>'
+    );
+
+    // 博客标题向下滚动显示
+    /*
+        $("#header").append(
+          '<div class="post-navbar"><div class="post-title"></div>'
+        );
+        $(".post-title").text($(".postTitle span").text());
+    */
+    // 图片查看器
+    fancyBox($(".cnblogs-markdown img"));
+
+    // 代码复制
+    codeCopy($("pre"), "post");
+  };
+
+  // 图片查看器
+  fancyBox = function (Img) {
+    // $(".cnblogs-markdown img")
+    Img.each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(element).attr("data-caption", $(this).attr("alt"));
+      $(this).wrap(element);
+      if (typeof $(this).attr("alt") != "undefined") {
+        if ($(this).attr("alt") != "") {
+          $(this)
+            .parent()
+            .after(
+              '<div class="img-caption">' + $(this).attr("alt") + "</div>"
+            );
+        }
+      }
+    });
+  };
+
+  /* 代码复制 */
+  codeCopy = function (codeElement, prefix) {
+    // 代码复制按钮
+    for (i = 0; i <= codeElement.length; i++) {
+      codeElement.eq(i).wrapAll('<div class="copyItem"></div>');
+      $(".copyItem").css("position", "relative");
+
+      if (codeElement.eq(i).children("code").length > 0) {
+        var codeType = codeElement
+          .eq(i)
+          .children("code")
+          .attr("class")
+          .split(" ")[0]
+          .split("-")[1];
+        if (codeType == null) {
+          codeType = "";
+        } else {
+          codeType = codeType.toLowerCase();
+        }
+        codeElement
+          .eq(i)
+          .before('<div class="codeType">' + codeType + "</div>");
+      }
+
+      codeElement
+        .eq(i)
+        .before(
+          '<div class="clipboard-button" id="copy_btn_' +
+          i +
+          ' " data-clipboard-target="#' +
+          prefix +
+          "_copy_target_" +
+          i +
+          '"title="复制"></div>'
+        );
+      codeElement.eq(i).attr("id", prefix + "_copy_target_" + i);
+    }
+
+    codeElement.children("code").each(function () {
+      var lines = $(this).text().split("\n").length - 1;
+      var $numbering = $("<ul/>").addClass("pre-numbering");
+      $(this).addClass("has-numbering").parent().append($numbering);
+      for (i = 1; i <= lines; i++) {
+        $numbering.append($("<li/>").attr("data-number", i));
+      }
+    });
+  };
+
+  /* 代码复制提示 */
+  copyCodeTip = function () {
+    var clipboard = new ClipboardJS(".clipboard-button");
+    clipboard.on("success", function (e) {
+      ele.$message({
+        showClose: true,
+        message: "代码复制成功！",
+        duration: 1000,
+        type: "success",
+      });
+      e.clearSelection();
+    });
+    clipboard.on("error", function (e) {
+      ele.$message({
+        showClose: true,
+        message: "代码复制失败！",
+        duration: 1000,
+        type: "error",
+      });
+      e.clearSelection();
+    });
+  };
+
+  /* owo 表情包插件 */
+  owoEmoji = function () {
+    $(".commentbox_footer").prepend(
+      '<div class="OwO" onclick="load_face(this)"><div class="OwO-logo"><i class="fa fa-smile-o" aria-hidden="true"></i></div></div>'
+    );
+    // 表情按钮按下
+    load_face = function (b) {
+      var c = new OwO({
+        logo: '<i class="fa fa-smile-o" aria-hidden="true"></i>',
+        container: document.getElementsByClassName("OwO")[0],
+        target: document.getElementById("tbCommentBody"),
+        api: "https://cdn.jsdelivr.net/gh/gshang2018/home/gshang.owo.json",
+        position: "up",
+        width: "100%",
+        maxHeight: "250px",
+      });
+      b.classList.add("OwO-open");
+      b.onclick = null;
+    };
+  };
+
+  /* 侧边目录滚动激活 */
+  contentActiveListen = function () {
+    //开启滚动监听, 监听所有在.nav类下的li
+    $("body").scrollspy({
+      offset: 80, // 偏置80，防止遮挡
+    });
+    $(window).scroll(function () {
+      var now = $("#sidebar_scroller").find(".active");
+      var prevNum = now.prevAll().length + 1;
+      var basicHeight = now.outerHeight();
+      $("#sideBar").scrollTop(prevNum * basicHeight - 60);
+    });
+  };
+
+  /* 侧边目录 */
+  setSideContent = function () {
+    var $ph = $("#cnblogs_post_body :header:eq(0)");
+    if ($ph.length > 0) {
+      //设置层级为1
+      $ph.attr("offset", "1");
+      //添加导航目录的内容
+      $("#sideBar").prepend(
+        '<div id="sidebar_scroller" class="sidebar-block"><ul class="nav"></ul></div>'
+      );
+      $("#sideBar").prepend(
+        '<div class="side-choose"><a id="myside" href="javascript:showSide()">侧边</a><a id="mycontent" href="javascript:showContent()">大纲</a></div>'
+      );
+      $("#sideBarMain").hide();
+      showContent();
+      //遍历文章里每个h标签
+      $("#cnblogs_post_body :header").each(function (i) {
+        var $h = $(this);
+        //设置h标签的id, 编号从0开始
+        $h.attr("id", "scroller-" + i);
+        //比上一个h标签层级小, 级数加1
+        if ($h[0].tagName > $ph[0].tagName) {
+          $h.attr("offset", parseInt($ph.attr("offset")) + 1);
+        } //比上一个h标签层级大, 级数减1
+        else if ($h[0].tagName < $ph[0].tagName) {
+          var h = parseInt($h[0].tagName.substring(1));
+          var ph = parseInt($ph[0].tagName.substring(1));
+
+          var offset = parseInt($ph.attr("offset")) - (ph - h);
+          if (offset < 1) {
+            offset = 1;
+          }
+          $h.attr("offset", offset);
+        } //和上一个h标签层级相等时, 级数不变
+        else {
+          $h.attr("offset", $ph.attr("offset"));
+        }
+        //添加h标签的目录内容
+        $("#sidebar_scroller ul").append(
+          '<li class="scroller-offset' +
+          $h.attr("offset") +
+          '"><a href="#scroller-' +
+          i +
+          '">' +
+          $h.text() +
+          "</a></li>"
+        );
+        //最后设置自己为上一个h标签
+        $ph = $h;
+      });
+      contentActiveListen(); // 侧边目录滚动激活
+    }
+  };
+
+  /* 评论区 */
+  setCommet = function () {
+    $(document).ajaxComplete(function (event, xhr, option) {
+      //评论头像
+      if (option.url.indexOf("GetComments") > -1) {
+        setTimeout(function () {
+          // 表情包
+          owoEmoji();
+
+          // 头像
+          $.each($(".feedbackItem"), function (index, ele) {
+            var self = $(ele);
+            var obj = self.find(".blog_comment_body");
+            var id = obj.attr("id").split("_")[2];
+            var blog = self.find('a[id^="a_comment_author"]');
+            var blogUrl = blog.attr("href");
+            var imgSrc =
+              $("#comment_" + id + "_avatar").html() ||
+              "http://pic.cnblogs.com/avatar/simple_avatar.gif";
+            self.prepend(
+              '<a class="comment_avatar_container" href="' +
+              blogUrl +
+              '"><img src="' +
+              imgSrc +
+              '" style="float:left;" class="comment_avatar"></a'
+            );
+            $(".feedbackListSubtitle").addClass("feedbackListSubtitle_right");
+            $(".feedbackCon").addClass("feedbackCon_right");
+          });
+
+          // 代码复制
+          codeCopy($("#blog-comments-placeholder pre"));
+          // 图片查看器
+          fancyBox($(".blog_comment_body img"), "comment");
+        }, 300);
+      }
+    });
+  };
+
+  /* 侧边公告个人信息 */
+  setProfile = function () {
+    //if ($("#blog-news").length > 0) {
+    new Vue({
+      el: "#sidebar_c3",
+      data: {
+        user: {
+          homepage: $("#profile_block a").eq(0).attr("href"),
+          name: $("#profile_block a").eq(0).text(),
+          desc: $("#blogTitle h2").html(),
+          join: $("#profile_block a").eq(1).attr("title"),
+          age: $("#profile_block a").eq(1).text(),
+          fans_link: $("#profile_block a").eq(2).attr("href"),
+          fans: $("#profile_block a").eq(2).text(),
+          follow_link: $("#profile_block a").eq(3).attr("href"),
+          follow: $("#profile_block a").eq(3).text(),
+          post: $("#stats_post_count")
+            .text()
+            .replace(/[^0-9]/gi, ""),
+          article: $("#stats_article_count")
+            .text()
+            .replace(/[^0-9]/gi, ""),
+          comment: $("#stats-comment_count")
+            .text()
+            .replace(/[^0-9]/gi, ""),
+          view_text: $("#stats-total-view-count span").text(),
+          view_num: $("#stats-total-view-count span").attr("title").replace(/[^0-9]/gi, ""),
+        },
+      },
+      template: `<div id="my-profile">
+    <a :href="user.homepage" class="my-logo-container"><img src="https://pic.cnblogs.com/avatar/1849509/20210206124809.png" class="my-logo" /></a>
+    <div class="my-name-container">
+      <span class="my-name"><a :href="user.homepage">{{user.name}}</a></span>
+      <span id="age" :title="user.join">{{user.age}}</span>
+    </div>
+  <div id="follow-btn"></div>
+    <span class="my-desc">{{user.desc}}</span>
+    <div class="my-detaial">
+      <ul>
+      <li id="follow"><a :href='user.follow_link' :title="user.follow">{{user.follow}}</a></li>
+        <li id="fans"><a :href='user.fans_link' :title="user.fans">{{user.fans}}</a></li>
+        <li id="more">
+            <div class="my-stats">
+                <div class="btn-more"></div>
+                <ul class="dropwon-content">
+                  <li id="post" :title="['随笔：'+user.post]">{{user.post}}</li>
+                  <li id="article" :title="['文章：'+user.article]">{{user.article}}</li>
+                  <li id="comment" :title="['评论：'+user.comment]">{{user.comment}}</li>
+                  <li id="view" :title="['阅读：'+user.view_num]">{{user.view_text}}</li>
+                </ul>
+              </div>         
+        </li>
+      </ul>
+    </div>
+  </div>
+  `,
+    });
+    $("#follow-btn").append($("#p_b_follow"));
+    // }
+  };
+</script>
