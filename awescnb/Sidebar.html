@@ -2,7 +2,7 @@
 <script>
     $.awesCnb({
         theme: {
-            name: 'geek',
+            name: 'bilibili',
             avatar: 'https://pic.cnblogs.com/avatar/1849509/20210206124809.png',
             favicon: 'https://gitee.com//riotian/blogimage/raw/master/img/20210119152411.png',
             // headerBackground: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210201134306.jpg'
@@ -111,6 +111,23 @@
         },
         // 画笔, markdown 下划线以及 title
         notation: {
+            enable: true,
+        },
+        // 适配 bilibili theme
+        // 点击特效
+        click: {
+            enable: true,
+            auto: false,
+            colors: ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'],
+            size: 30,
+            maxCount: 50,
+        },
+        highLight: {
+            dark: 'atomOneDark',
+            light: 'atomOneLight',
+        },
+        // 行号显示
+        lineNumbers: {
             enable: true,
         },
     });

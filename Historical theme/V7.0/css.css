@@ -349,7 +349,8 @@ pre {
     height: 400px;
     /*高度*/
     clear: both;
-    background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805072615v2-78bbe4b2f59be1fa81b852157af37a59_r.jpg");
+    /* background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805072615v2-78bbe4b2f59be1fa81b852157af37a59_r.jpg"); */
+    background: url("https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210306165250.jpg");
     background-size: cover;
 }
 
@@ -419,7 +420,8 @@ pre {
 
 body {
     color: #000;
-    background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed;
+    /* background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed; */
+    background: url("https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210201134306.jpg") fixed;
     background-size: 100%;
     background-repeat: no-repeat;
     font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
