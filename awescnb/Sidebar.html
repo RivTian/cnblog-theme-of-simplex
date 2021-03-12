@@ -3,11 +3,13 @@
     $.awesCnb({
         theme: {
             name: 'bilibili',
+            // title: 'RioTian の 博客',
             avatar: 'https://pic.cnblogs.com/avatar/1849509/20210206124809.png',
             favicon: 'https://gitee.com//riotian/blogimage/raw/master/img/20210119152411.png',
             // headerBackground: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210201134306.jpg'
             // headerBackground: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210123195144.jpg'
             headerBackground: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210302120620.jpg'
+            // headerBackground: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210309103343.jpg'
         },
         //进入博客的提示
         notice: {
@@ -34,6 +36,7 @@
             value: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210302120620.jpg',
             // value: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210201134306.jpg',
             // value: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210104152318.jpg',
+            // value: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210309103343.jpg',
             opacity: 0.85,
             repeat: false,
         },
@@ -74,12 +77,39 @@
                 color: '', // 颜色
             },
             audio: [{
-                name: '恋ってもどかしい',
-                artist: '光宗信吉',
-                url: 'http://music.163.com/song/media/outer/url?id=28191027.mp3',
-                cover: 'https://gitee.com//riotian/blogimage/raw/master/img/20200725223851.png',
-                lrc: `[00:00.00] 暂无歌词`,
-            }, ],
+                    name: '町で噂のあんみつ姫',
+                    artist: 'Peak A Soul+',
+                    url: 'http://music.163.com/song/media/outer/url?id=1364646136.mp3',
+                    cover: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210309104614.png',
+                    lrc: `[00:00.00] 暂无歌词`,
+                },
+                {
+                    name: '恋ってもどかしい',
+                    artist: '光宗信吉',
+                    url: 'http://music.163.com/song/media/outer/url?id=28191027.mp3',
+                    cover: 'https://gitee.com//riotian/blogimage/raw/master/img/20200725223851.png',
+                    lrc: `[00:00.00] 暂无歌词`,
+                },
+                {
+                    name: '恋のうた (feat. 由崎司)',
+                    artist: 'Yunomi/鬼頭明里',
+                    url: 'http://music.163.com/song/media/outer/url?id=1484336476.mp3',
+                    cover: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210309104620.png',
+                    lrc: `[00:00.00] 暂无歌词`,
+                },
+                // {
+                //     name: 'God Knows...',
+                //     artist: '平野綾',
+                //     url: 'http://music.163.com/song/media/outer/url?id=22826401.mp3',
+                //     cover: 'https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210306220303.png',
+                //     lrc: `[00:00.00] 暂无歌词`,
+                // },
+            ],
+        },
+        // 随笔目录
+        catalog: {
+            enable: true,
+            position: 'right',
         },
         // github图标
         github: {
@@ -116,7 +146,7 @@
         // 适配 bilibili theme
         // 点击特效
         click: {
-            enable: true,
+            enable: false,
             auto: false,
             colors: ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'],
             size: 30,
