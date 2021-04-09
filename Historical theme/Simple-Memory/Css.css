@@ -92,13 +92,16 @@ a:active {
 
 #home {
     border-radius: 10px;
-    margin: 0 auto;
     width: 950px;
     background-color: #fff;
     padding: 30px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    box-shadow: 0 2px 6px rgba(100, 100, 100, .3)
+    margin: 50px auto;
+    box-shadow: 0 2px 15px rgba(100, 100, 100, .3)
+}
+
+/* 为了让 home 底部的 margin-bottom 显示正常 */
+#page_end_html {
+    min-height: 1px;
 }
 
 #header {
@@ -134,10 +137,6 @@ a:active {
     line-height: 1.846153846;
     color: #757575;
     float: left
-}
-
-#blogLogo {
-    float: right
 }
 
 #navigator {
@@ -198,14 +197,6 @@ ul#navList {
     width: auto;
     padding: 0;
     font-size: 13.5px;
-}
-
-.blogStats {
-    float: right;
-    color: #757575;
-    margin-top: 19px;
-    margin-right: 2px;
-    text-align: right
 }
 
 #main {
@@ -611,12 +602,8 @@ ul#navList {
 }
 
 .louzhu {
-    background: transparent url('/images/icoLouZhu.gif') no-repeat scroll right top;
-    padding-right: 16px
-}
-
-.feedbackListSubtitle {
-    color: #a8a8a8
+    /*background:transparent url('/images/icoLouZhu.gif') no-repeat scroll right top;*/
+    /*padding-right:16px;*/
 }
 
 .feedbackListSubtitle a:link,
@@ -639,15 +626,6 @@ ul#navList {
     width: 200px;
     text-align: right;
     float: right
-}
-
-.feedbackCon {
-    border-bottom: 1px solid #eee;
-    padding: 10px 20px 10px 5px;
-    min-height: 35px;
-    _height: 35px;
-    margin-bottom: 1em;
-    line-height: 1.5
 }
 
 #divRefreshComments {
@@ -831,11 +809,11 @@ ul#navList {
 
 .entrylistDescription {
     color: #666;
-    text-align: right;
+    font-size: 15px;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     padding-right: 10px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .entrylistItem {
@@ -1058,11 +1036,6 @@ ul#navList {
 .feedbackListSubtitle {
     clear: both;
     color: #a8a8a8;
-    padding: 8px 5px
-}
-
-.feedbackItem {
-    margin-top: 30px
 }
 
 .divPhoto {
@@ -1078,17 +1051,6 @@ ul#navList {
     padding-bottom: 5px;
     padding-right: 10px;
     margin-bottom: 30px
-}
-
-#footer {
-    color: #686868;
-    text-align: center;
-    min-height: 15px;
-    _height: 15px;
-    border-top: 1px solid #ededed;
-    margin-top: 50px;
-    padding-top: 10px;
-    margin-bottom: 10px
 }
 
 .personInfo {
@@ -1112,15 +1074,7 @@ ul#navList {
 }
 
 .postBody h2 {
-    font-size: 150%;
-    margin: 15px auto 2px auto;
-    font-weight: bold
-}
-
-.postBody h3 {
-    font-size: 120%;
-    margin: 15px auto 2px auto;
-    font-weight: bold
+    margin-top: 40px !important;
 }
 
 .postBody h4 {
@@ -1160,14 +1114,6 @@ ul#navList {
     margin-bottom: 1em
 }
 
-.postBody blockquote {
-    background: url('images/comment.gif') no-repeat 25px 0;
-    min-height: 35px;
-    _height: 35px;
-    line-height: 1.6em;
-    color: #333
-}
-
 .myposts_title {
     font-weight: bold;
     text-align: center
@@ -1196,24 +1142,31 @@ h1.thumbTitle {
 
 h1.entrylistTitle {
     font-size: 20px;
+    border: none;
 }
 
 #ViewPicture1_GalleryImage {
     max-width: 100%;
 }
 
+.feedbackItem {
+    margin: 20px auto;
+    border-radius: 10px;
+    background: aliceblue;
+    color: grey;
+    padding: 20px;
+}
+
 .feedbackListSubtitle {
-    padding: 10px;
+    margin-bottom: 10px;
     font-size: 13px;
 }
 
 .feedbackCon {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.8;
     min-height: auto;
-    border: none;
     margin: 0 0;
-    padding: 0px 20px 10px 10px;
 }
 
 #comment_form_container .comment_textarea {
@@ -1224,16 +1177,9 @@ h1.entrylistTitle {
     min-height: 200px;
 }
 
-.feedbackItem {
-    margin: 20px auto;
-    border-radius: 10px;
-    background: aliceblue;
-    color: grey;
-}
-
 #blogLogo {
     float: left;
-    height: 60px;
+    height: 70px;
     margin-right: 20px;
 }
 
@@ -1290,6 +1236,10 @@ div.day>div.postTitle {
     display: none;
 }
 
+#mainContent>.forFlow>.pager:nth-of-type(1) {
+    display: none;
+}
+
 .cnblogs-markdown .hljs,
 .cnblogs-post-body .hljs,
 .cnblogs-markdown code,
@@ -1322,6 +1272,13 @@ div.day>div.postTitle {
     background: aliceblue;
     color: gray;
     padding-left: 30px;
+    padding-right: 30px;
+}
+
+.postBody blockquote {
+    min-height: 35px;
+    _height: 35px;
+    line-height: 1.6em;
 }
 
 #commentform_title>a {
@@ -1415,6 +1372,7 @@ dt:hover {
 #cnblogs_post_body h3 {
     font-size: 20px;
     color: #21759b;
+    margin-top: 30px;
 }
 
 #cnblogs_post_body table {
@@ -1428,12 +1386,14 @@ dt:hover {
     margin: auto;
 }
 
-.postBody a {
+.postBody a,
+.feedbackCon a {
     text-decoration: none !important;
     color: #0366d6;
 }
 
-.postBody a:hover {
+.postBody a:hover,
+.feedbackCon a:hover {
     border-bottom: 1px dashed #0366d6;
 }
 
@@ -1465,10 +1425,12 @@ ul.submenu {
 }
 
 #footer {
+    color: #686868;
+    text-align: center;
+    min-height: 15px;
+    _height: 15px;
+    margin-top: 60px;
     line-height: 1.7;
-    border-top: none;
-    padding-top: 0;
-    margin-bottom: 0;
 }
 
 .hljs-keyword,
@@ -1730,6 +1692,23 @@ ul.submenu {
     }
 
     #footer {
-        display: none;
+        /*display:none;*/
     }
+}
+
+/* 博客园插入视频CSS部分 */
+#cnblogs_post_body .video {
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    position: relative;
+    width: 100%;
+}
+
+#cnblogs_post_body .video iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
