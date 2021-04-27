@@ -1712,3 +1712,11 @@ ul.submenu {
     width: 100%;
     height: 100%;
 }
+
+/* 修改分割线样式 */
+hr {
+    background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
+    border: 0;
+    height: 3px;
+    margin: 40px 0
+}

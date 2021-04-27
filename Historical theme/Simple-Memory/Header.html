@@ -64,24 +64,31 @@
 
         // add new items
         $navList.cnblogsNav('addNav', index++, '🏡 Home', 'https://www.cnblogs.com/RioTian/', 'menuItemHome');
-        // $navList.cnblogsNav('addNav', index++, '📧 Email','https://mail.google.com/mail/u/0/#inbox?compose=new', 'menuItemEmail');
         $navList.cnblogsNav('addNav', index++, '👨🏻‍🎓 About',
             'https://www.cnblogs.com/RioTian/p/12330051.html', 'menuItemAbout');
         $navList.cnblogsNav('addNav', index++, '🔗 Links', 'javascript:void(0)', 'menuItemLinks');
         $navList.cnblogsNav('addNav', index++, '🔑 Admin', 'https://i.cnblogs.com/', 'menuItemAdmin');
+        // $navList.cnblogsNav('addNav', index++, '📧 Email','https://mail.google.com/mail/u/0/#inbox?compose=new', 'menuItemEmail');
 
 
         // Test cases
         // https://emojipedia.org/
+        // http://emojihomepage.com/
         addSubmenuItem('menuItemLinks', '📃 MainPage', 'https://home.cnblogs.com/u/RioTian/');
+        addSubmenuItem('menuItemLinks', '📝 NewPost', 'https://i.cnblogs.com/posts/edit');
+        addSubmenuItem('menuItemLinks', '⭐ 代码片段', 'https://www.cnblogs.com/RioTian/p/14678221.html');
+        addSubmenuItem('menuItemLinks', '🔍 文章搜索', 'https://zzk.cnblogs.com/my?app=Blogpost');
         addSubmenuItem('menuItemLinks', '😸 Github', 'https://github.com/RivTian');
+        addSubmenuItem('menuItemLinks', '💡 蒟蒻大佬', 'https://www.jvruo.com/index.php');
+        addSubmenuItem('menuItemLinks', '🔋 千千大佬', 'https://www.dreamwings.cn/');
+        addSubmenuItem('menuItemLinks', '🎵 Netease', 'https://music.163.com/#/user/home?id=296366418');
+
         // addSubmenuItem('menuItemLinks', '💭 Weibo', 'https://weibo.com/sinkinben');
-        addSubmenuItem('menuItemLinks', '📘 Zhihu', 'https://www.zhihu.com/people/2heart');
+        // addSubmenuItem('menuItemLinks', '📘 Zhihu', 'https://www.zhihu.com/people/2heart');
         // addSubmenuItem('menuItemLinks', '📗 Douban', 'https://www.douban.com/people/sinkinben/');
         // addSubmenuItem('menuItemLinks', '🌎 Facebook', 'https://www.facebook.com/sinkinben/');
-        addSubmenuItem('menuItemLinks', '📧 Email', 'https://mail.google.com/mail/u/0/#inbox?compose=new');
-        addSubmenuItem('menuItemLinks', '👨‍🌾 Leetcode', 'https://leetcode-cn.com/u/murabito-b/');
-        addSubmenuItem('menuItemLinks', '🎵 Netease', 'https://music.163.com/#/user/home?id=296366418');
+        // addSubmenuItem('menuItemLinks', '📧 Email', 'https://mail.google.com/mail/u/0/#inbox?compose=new');
+        // addSubmenuItem('menuItemLinks', '👨‍🌾 Leetcode', 'https://leetcode-cn.com/u/murabito-b/');
 
 
         // click again to hide the submenu on mobile
@@ -101,11 +108,10 @@
         // change the browser tab icon
         document.getElementById('favicon').href =
             'https://gitee.com//riotian/blogimage/raw/master/img/20210119152411.png';
-        // document.getElementById('favicon').href = 'https://cdn.accounts.nintendo.com/account/images/favicon.ico?t=202103010541';
 
         // change the title logo
         var logo = document.getElementById('blogLogo');
-        logo.setAttribute('src', 'https://pic.cnblogs.com/avatar/1849509/20210206124809.png');
+        logo.setAttribute('src', 'https://pic.cnblogs.com/avatar/1849509/20210427163305.png');
         logo.setAttribute('alt', 'Administrator');
         logo.style.transform = 'rotateY(180deg)';
         // click the title logo to jump to admin backend
