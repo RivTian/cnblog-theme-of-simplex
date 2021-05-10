@@ -8,72 +8,76 @@
   <span class="my-desc">{{user.desc}}</span>
   <div class="my-detaial">
     <ul>
-      <li id="follow"><a :href='user.follow_link' :title="user.follow">{{user.follow}}</a></li>
+    <li id="follow"><a :href='user.follow_link' :title="user.follow">{{user.follow}}</a></li>
       <li id="fans"><a :href='user.fans_link' :title="user.fans">{{user.fans}}</a></li>
       <li id="more">
-        <div class="my-stats">
-          <div class="btn-more"></div>
-          <ul class="dropwon-content">
-            <li id="post" :title="['随笔：'+user.post]">{{user.post}}</li>
-            <li id="article" :title="['文章：'+user.article]">{{user.article}}</li>
-            <li id="comment" :title="['评论：'+user.comment]">{{user.comment}}</li>
-            <li id="view" :title="['阅读：'+user.view_num]">{{user.view_text}}</li>
-          </ul>
-        </div>
+          <div class="my-stats">
+              <div class="btn-more"></div>
+              <ul class="dropwon-content">
+                <li id="post" :title="['随笔：'+user.post]">{{user.post}}</li>
+                <li id="article" :title="['文章：'+user.article]">{{user.article}}</li>
+                <li id="comment" :title="['评论：'+user.comment]">{{user.comment}}</li>
+                <li id="view" :title="['阅读：'+user.view_num]">{{user.view_text}}</li>
+              </ul>
+            </div>         
       </li>
     </ul>
   </div>
 
-  <div id="follow-btn"></div>
+<div id="follow-btn"></div>
 </div>
 <script>
+
   new Vue({
-    el: '#my-profile',
-    data: {
-      user: {
-        avatar: "https://pic.cnblogs.com/avatar/1849509/20210206124809.png",
-        homepage: $('#profile_block a').eq(0).attr('href'),
-        name: $('#profile_block a').eq(0).text(),
-        desc: $('#blogTitle h2').html(),
-        join: $('#profile_block a').eq(1).attr('title'),
-        age: $('#profile_block a').eq(1).text(),
-        fans_link: $('#profile_block a').eq(2).attr('href'),
-        fans: $('#profile_block a').eq(2).text(),
-        follow_link: $('#profile_block a').eq(3).attr('href'),
-        follow: $('#profile_block a').eq(3).text(),
-        post: $('#stats_post_count').text().replace(/[^0-9]/ig, ""),
-        article: $('#stats_article_count').text().replace(/[^0-9]/ig, ""),
-        comment: $('#stats-comment_count').text().replace(/[^0-9]/ig, ""),
-        view_text: $('#stats-total-view-count span').text(),
-        view_num: $('#stats-total-view-count span').attr('title').replace(/[^0-9]/ig, "")
+    el:'#my-profile',
+    data:{
+      user:{
+        // avatar:"https://pic.cnblogs.com/avatar/1849509/20210427163337.png",
+        // avatar: "https://pic.cnblogs.com/avatar/1849509/20210206124809.png",
+        avatar: "https://raw.githubusercontent.com/RivTian/Blogimg/main/img/20210510200922.jpg",
+        homepage:$('#profile_block a').eq(0).attr('href'),
+        name:$('#profile_block a').eq(0).text(),
+        desc:$('#blogTitle h2').html(),
+        join:$('#profile_block a').eq(1).attr('title'),
+        age:$('#profile_block a').eq(1).text(),
+        fans_link:$('#profile_block a').eq(2).attr('href'),
+        fans:$('#profile_block a').eq(2).text(),
+        follow_link:$('#profile_block a').eq(3).attr('href'),
+        follow:$('#profile_block a').eq(3).text(),
+        post:$('#stats_post_count').text().replace(/[^0-9]/ig,""),
+        article:$('#stats_article_count').text().replace(/[^0-9]/ig,""),
+        comment:$('#stats-comment_count').text().replace(/[^0-9]/ig,""),
+        view_text:$('#stats-total-view-count span').text(),
+       view_num:$('#stats-total-view-count span').attr('title').replace(/[^0-9]/ig,"")
       }
     }
   })
   $('#follow-btn').append($('#p_b_follow'));
   if ($("#topics").length > 0) {
-    // setZan();
-    $('#digg_tips').bind("DOMNodeInserted", function () {
-      if ($('#digg_tips').text() == "支持成功" || $('#digg_tips').text() == "取消支持成功") {
-        ele.$message({
-          showClose: true,
-          message: $('#digg_tips').text(),
-          duration: 1000,
-          type: "success",
-        });
-      }
+  // setZan();
+$('#digg_tips').bind("DOMNodeInserted",function(){
+   if($('#digg_tips').text()=="支持成功" || $('#digg_tips').text()=="取消支持成功"){
+ele.$message({
+      showClose: true,
+      message: $('#digg_tips').text(),
+      duration: 1000,
+      type: "success",
+    });
+}
 
-      if ($('#digg_tips').text() == "您已支持过") {
-        ele.$message({
-          showClose: true,
-          message: $('#digg_tips').text(),
-          duration: 1000,
-          type: "warning",
-        });
-      }
+   if($('#digg_tips').text()=="您已支持过"){
+ele.$message({
+      showClose: true,
+      message: $('#digg_tips').text(),
+      duration: 1000,
+      type: "warning",
+    });
+}
 
 
 
-    })
+})
 
-  }
-</script>
+}
+  </script>
+

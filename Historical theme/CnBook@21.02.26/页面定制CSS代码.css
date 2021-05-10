@@ -2976,195 +2976,124 @@ by GShang https://www.cnblogs.com/gshang/
 
 	/*** Atom OneDark 开始**/
 
-	/*
-@media screen and (min-width:0px) {
-.cnblogs-markdown .hljs,.cnblogs-post-body .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: .5em;
-    color: #abb2bf;
-}
-
-.cnblogs-markdown .hljs-comment,.cnblogs-markdown .hljs-quote,.cnblogs-post-body .hljs-comment,.cnblogs-post-body .hljs-quote {
-    color: #5c6370;
-    font-style: italic
-}
-
-.cnblogs-markdown .hljs-doctag,.cnblogs-markdown .hljs-formula,.cnblogs-markdown .hljs-keyword,.cnblogs-post-body .hljs-doctag,.cnblogs-post-body .hljs-formula,.cnblogs-post-body .hljs-keyword {
-    color: #c678dd
-}
-
-.cnblogs-markdown .hljs-deletion,.cnblogs-markdown .hljs-name,.cnblogs-markdown .hljs-section,.cnblogs-markdown .hljs-selector-tag,.cnblogs-markdown .hljs-subst,.cnblogs-post-body .hljs-deletion,.cnblogs-post-body .hljs-name,.cnblogs-post-body .hljs-section,.cnblogs-post-body .hljs-selector-tag,.cnblogs-post-body .hljs-subst {
-    color: #e06c75
-}
-
-.cnblogs-markdown .hljs-literal,.cnblogs-post-body .hljs-literal {
-    color: #56b6c2
-}
-
-.cnblogs-markdown .hljs-addition,.cnblogs-markdown .hljs-attribute,.cnblogs-markdown .hljs-meta-string,.cnblogs-markdown .hljs-regexp,.cnblogs-markdown .hljs-string,.cnblogs-post-body .hljs-addition,.cnblogs-post-body .hljs-attribute,.cnblogs-post-body .hljs-meta-string,.cnblogs-post-body .hljs-regexp,.cnblogs-post-body .hljs-string {
-    color: #98c379
-}
-
-.cnblogs-markdown .hljs-built_in,.cnblogs-markdown .hljs-class .hljs-title,.cnblogs-post-body .hljs-built_in,.cnblogs-post-body .hljs-class .hljs-title {
-    color: #e6c07b
-}
-
-.cnblogs-markdown .hljs-attr,.cnblogs-markdown .hljs-number,.cnblogs-markdown .hljs-selector-attr,.cnblogs-markdown .hljs-selector-class,.cnblogs-markdown .hljs-selector-pseudo,.cnblogs-markdown .hljs-template-variable,.cnblogs-markdown .hljs-type,.cnblogs-markdown .hljs-variable,.cnblogs-post-body .hljs-attr,.cnblogs-post-body .hljs-number,.cnblogs-post-body .hljs-selector-attr,.cnblogs-post-body .hljs-selector-class,.cnblogs-post-body .hljs-selector-pseudo,.cnblogs-post-body .hljs-template-variable,.cnblogs-post-body .hljs-type,.cnblogs-post-body .hljs-variable {
-    color: #d19a66
-}
-
-.cnblogs-markdown .hljs-bullet,.cnblogs-markdown .hljs-link,.cnblogs-markdown .hljs-meta,.cnblogs-markdown .hljs-selector-id,.cnblogs-markdown .hljs-symbol,.cnblogs-markdown .hljs-title,.cnblogs-post-body .hljs-bullet,.cnblogs-post-body .hljs-link,.cnblogs-post-body .hljs-meta,.cnblogs-post-body .hljs-selector-id,.cnblogs-post-body .hljs-symbol,.cnblogs-post-body .hljs-title {
-    color: #61aeee
-}
-
-.cnblogs-markdown .hljs-emphasis,.cnblogs-post-body .hljs-emphasis {
-    font-style: italic
-}
-
-.cnblogs-markdown .hljs-strong,.cnblogs-post-body .hljs-strong {
-    font-weight: 700
-}
-
-.cnblogs-markdown .hljs-link,.cnblogs-post-body .hljs-link {
-    text-decoration: underline
-}
-
-.cnblogs-markdown .hljs-tag,.cnblogs-post-body .hljs-tag {
-    color: #abb2bf
-}
-
-}
-*/
-
-	/** vscode **/
 
 	@media screen and (min-width:0px) {
-		/*
- * Visual Studio 2015 dark style
- * Author: Nicolas LLOBERA <nllobera@gmail.com>
- */
 
 		.cnblogs-markdown .hljs,
-		.cnblogs-markdown pre {
-			background: #1E1E1E !important;
-			color: #DCDCDC !important;
+		.cnblogs-post-body .hljs {
+			display: block;
+			overflow-x: auto;
+			padding: .5em;
+			color: #abb2bf;
 		}
 
-		.hljs::-webkit-scrollbar {
-			/* 滚动条整体样式 */
-			width: 8px;
-			/* 高宽分别对应横竖滚动条的尺寸 */
-			height: 8px;
-			transition: height 3000ms;
-
+		.cnblogs-markdown .hljs-comment,
+		.cnblogs-markdown .hljs-quote,
+		.cnblogs-post-body .hljs-comment,
+		.cnblogs-post-body .hljs-quote {
+			color: #5c6370;
+			font-style: italic
 		}
 
-		.hljs::-webkit-scrollbar-thumb {
-			/*滚动条里面小方块*/
-			//border-radius: 10px;
-			background-color: #c1c1c1;
+		.cnblogs-markdown .hljs-doctag,
+		.cnblogs-markdown .hljs-formula,
+		.cnblogs-markdown .hljs-keyword,
+		.cnblogs-post-body .hljs-doctag,
+		.cnblogs-post-body .hljs-formula,
+		.cnblogs-post-body .hljs-keyword {
+			color: #c678dd
 		}
 
-		.hljs-keyword,
-		.hljs-literal,
-		.hljs-symbol,
-		.hljs-name {
-			color: #569CD6 !important;
+		.cnblogs-markdown .hljs-deletion,
+		.cnblogs-markdown .hljs-name,
+		.cnblogs-markdown .hljs-section,
+		.cnblogs-markdown .hljs-selector-tag,
+		.cnblogs-markdown .hljs-subst,
+		.cnblogs-post-body .hljs-deletion,
+		.cnblogs-post-body .hljs-name,
+		.cnblogs-post-body .hljs-section,
+		.cnblogs-post-body .hljs-selector-tag,
+		.cnblogs-post-body .hljs-subst {
+			color: #e06c75
 		}
 
-		.hljs-link {
-			color: #569CD6 !important;
-			text-decoration: underline !important;
+		.cnblogs-markdown .hljs-literal,
+		.cnblogs-post-body .hljs-literal {
+			color: #56b6c2
 		}
 
-		.hljs-built_in,
-		.hljs-type {
-			color: #4EC9B0 !important;
+		.cnblogs-markdown .hljs-addition,
+		.cnblogs-markdown .hljs-attribute,
+		.cnblogs-markdown .hljs-meta-string,
+		.cnblogs-markdown .hljs-regexp,
+		.cnblogs-markdown .hljs-string,
+		.cnblogs-post-body .hljs-addition,
+		.cnblogs-post-body .hljs-attribute,
+		.cnblogs-post-body .hljs-meta-string,
+		.cnblogs-post-body .hljs-regexp,
+		.cnblogs-post-body .hljs-string {
+			color: #98c379
 		}
 
-		.hljs-number,
-		.hljs-class {
-			color: #B8D7A3 !important;
+		.cnblogs-markdown .hljs-built_in,
+		.cnblogs-markdown .hljs-class .hljs-title,
+		.cnblogs-post-body .hljs-built_in,
+		.cnblogs-post-body .hljs-class .hljs-title {
+			color: #e6c07b
 		}
 
-		.hljs-string,
-		.hljs-meta-string {
-			color: #D69D85 !important;
+		.cnblogs-markdown .hljs-attr,
+		.cnblogs-markdown .hljs-number,
+		.cnblogs-markdown .hljs-selector-attr,
+		.cnblogs-markdown .hljs-selector-class,
+		.cnblogs-markdown .hljs-selector-pseudo,
+		.cnblogs-markdown .hljs-template-variable,
+		.cnblogs-markdown .hljs-type,
+		.cnblogs-markdown .hljs-variable,
+		.cnblogs-post-body .hljs-attr,
+		.cnblogs-post-body .hljs-number,
+		.cnblogs-post-body .hljs-selector-attr,
+		.cnblogs-post-body .hljs-selector-class,
+		.cnblogs-post-body .hljs-selector-pseudo,
+		.cnblogs-post-body .hljs-template-variable,
+		.cnblogs-post-body .hljs-type,
+		.cnblogs-post-body .hljs-variable {
+			color: #d19a66
 		}
 
-		.hljs-regexp,
-		.hljs-template-tag {
-			color: #9A5334 !important;
+		.cnblogs-markdown .hljs-bullet,
+		.cnblogs-markdown .hljs-link,
+		.cnblogs-markdown .hljs-meta,
+		.cnblogs-markdown .hljs-selector-id,
+		.cnblogs-markdown .hljs-symbol,
+		.cnblogs-markdown .hljs-title,
+		.cnblogs-post-body .hljs-bullet,
+		.cnblogs-post-body .hljs-link,
+		.cnblogs-post-body .hljs-meta,
+		.cnblogs-post-body .hljs-selector-id,
+		.cnblogs-post-body .hljs-symbol,
+		.cnblogs-post-body .hljs-title {
+			color: #61aeee
 		}
 
-		.hljs-subst,
-		.hljs-function,
-		.hljs-title,
-		.hljs-params,
-		.hljs-formula {
-			color: #DCDCDC !important;
+		.cnblogs-markdown .hljs-emphasis,
+		.cnblogs-post-body .hljs-emphasis {
+			font-style: italic
 		}
 
-		.hljs-comment,
-		.hljs-quote {
-			color: #57A64A !important;
-			/* font-style: italic!important; */
+		.cnblogs-markdown .hljs-strong,
+		.cnblogs-post-body .hljs-strong {
+			font-weight: 700
 		}
 
-		.hljs-doctag {
-			color: #608B4E !important;
+		.cnblogs-markdown .hljs-link,
+		.cnblogs-post-body .hljs-link {
+			text-decoration: underline
 		}
 
-		.hljs-meta,
-		.hljs-meta-keyword,
-		.hljs-tag {
-			color: #9B9B9B !important;
-		}
-
-		.hljs-variable,
-		.hljs-template-variable {
-			color: #BD63C5 !important;
-		}
-
-		.hljs-attr,
-		.hljs-attribute,
-		.hljs-builtin-name {
-			color: #9CDCFE !important;
-		}
-
-		.hljs-section {
-			color: gold !important;
-		}
-
-		.hljs-emphasis {
-			font-style: italic !important;
-		}
-
-		.hljs-strong {
-			font-weight: bold !important;
-		}
-
-		.hljs-bullet,
-		.hljs-selector-tag,
-		.hljs-selector-id,
-		.hljs-selector-class,
-		.hljs-selector-attr,
-		.hljs-selector-pseudo {
-			color: #D7BA7D !important;
-		}
-
-		.hljs-addition {
-			color: inherit !important;
-			background-color: #144212 !important;
-			display: inline-block !important;
-			width: 100% !important;
-		}
-
-		.hljs-deletion {
-			background-color: #600 !important;
-			display: inline-block !important;
-			width: 100% !important;
+		.cnblogs-markdown .hljs-tag,
+		.cnblogs-post-body .hljs-tag {
+			color: #abb2bf
 		}
 
 	}
