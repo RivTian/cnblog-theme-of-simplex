@@ -177,7 +177,7 @@ a:active {
   text-decoration: none;
 }
 
-#navList > li:hover ul {
+#navList>li:hover ul {
   display: block;
 }
 
@@ -189,7 +189,7 @@ ul#navList {
   margin-bottom: 25px;
 }
 
-#navList > li {
+#navList>li {
   margin: 15px 15px;
   position: relative;
 }
@@ -1194,10 +1194,9 @@ h1.entrylistTitle {
   margin-right: 20px;
 }
 
-#blogTitle {
-}
+#blogTitle {}
 
-#blogTitle > h1 {
+#blogTitle>h1 {
   line-height: 70px;
   font-family: "Chalkduster", "Segoe Script", Arial, "Helvetica Neue", Helvetica,
     sans-serif;
@@ -1220,16 +1219,16 @@ div#navigator {
   display: none;
 }
 
-div.day > div.postDesc a,
-div.day > div.postDesc span {
+div.day>div.postDesc a,
+div.day>div.postDesc span {
   display: none;
 }
 
-div.day > div.postTitle > a.vertical-middle > * {
+div.day>div.postTitle>a.vertical-middle>* {
   vertical-align: baseline !important;
 }
 
-div.day > div.postTitle {
+div.day>div.postTitle {
   box-sizing: border-box;
 }
 
@@ -1245,11 +1244,11 @@ div.day > div.postTitle {
   padding: 0px;
 }
 
-#mainContent > .forFlow > .entrylist > .entrylistTitle {
+#mainContent>.forFlow>.entrylist>.entrylistTitle {
   display: none;
 }
 
-#mainContent > .forFlow > .pager:nth-of-type(1) {
+#mainContent>.forFlow>.pager:nth-of-type(1) {
   display: none;
 }
 
@@ -1296,7 +1295,7 @@ div.day > div.postTitle {
   line-height: 1.6em;
 }
 
-#commentform_title > a {
+#commentform_title>a {
   display: none;
 }
 
@@ -1418,8 +1417,8 @@ h3,
 h4,
 h5,
 h6,
-.postTitle > .postTitle2,
-.entrylistPosttitle > .entrylistItemTitle {
+.postTitle>.postTitle2,
+.entrylistPosttitle>.entrylistItemTitle {
   font-family: -apple-system, BlinkMacSystemFont, "Microsoft Yahei", "Georgia",
     "Segoe UI", "Roboto", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
     sans-serif;
@@ -1671,12 +1670,12 @@ ul.submenu {
     width: 100%;
   }
 
-  #blogTitle > h1 {
+  #blogTitle>h1 {
     margin-top: 0;
     font-size: 27px;
   }
 
-  #navList > li {
+  #navList>li {
     width: calc(100% / 4);
     max-width: 100px;
     margin: 15px 0px;
@@ -1693,8 +1692,7 @@ ul.submenu {
     min-width: 200px;
   }
 
-  #sideBarContents {
-  }
+  #sideBarContents {}
 
   #sideBarTab,
   #sideBarContents {
@@ -1730,14 +1728,17 @@ ul.submenu {
 
 /* 修改分割线样式 */
 hr {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    #ddd,
-    #ddd 4px,
-    transparent 4px,
-    transparent 8px
-  );
+  background-image: repeating-linear-gradient(-45deg,
+      #ddd,
+      #ddd 4px,
+      transparent 4px,
+      transparent 8px);
   border: 0;
   height: 3px;
   margin: 40px 0;
+}
+
+pre {
+  /* 4个空格进行缩进*/
+  tab-size: 4
 }

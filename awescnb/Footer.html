@@ -40,9 +40,27 @@
         });
     });
 </script>
+
 <!-- 莲 Live2D，缺点是 GPU占用太大了 + 人物加载会模糊很多-->
 <script src="https://blog-static.cnblogs.com/files/RioTian/live2dcubismcore.js"></script>
 <script src="https://blog-static.cnblogs.com/files/RioTian/bundle02.js"></script>
+<script>
+    function isPC() { //是否为PC端
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"
+        ];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+</script>
 <canvas id="live2d" width="400" height="400" class="live2d"
     style="position: fixed; opacity: 1; left: -50px; bottom: -100px; z-index: 99999; pointer-events: none;"></canvas>
 <script type="text/javascript">
@@ -50,5 +68,6 @@
         'https://cdn.jsdelivr.net/gh/RivTian/Live2D@1.0/'; // 指定资源文件（模型）保存的路径，使用github的release版本，路径如下https://cdn.jsdelivr.net/gh/用户/库@版本号/资源路径
     var backImageName = ''; // 指定背景图片 ,默认为空
     var modelDir = ['lian0']; // 指定需要加载的模型
-    initDefine(resourcesPath, backImageName, modelDir); // 初始化模型
+    if (isPC()) // 检测是否为 PC 端，移动端不加载
+        initDefine(resourcesPath, backImageName, modelDir); // 初始化模型
 </script>

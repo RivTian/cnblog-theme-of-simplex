@@ -1,0 +1,760 @@
+<!-- blackcat: footer -->
+<blackcat-footer>
+    <!-- blackcat: author -->
+    <div class="blackcat-author hide">
+        <div class="blackcat-wrapper">
+            <div class="avatar"><img class="blackcat-avatar"></div>
+            <div class="nickname"></div>
+            <div class="signature"></div>
+            <div class="btns">
+                <div class="btn" blackcat-event="view">关注</div>
+            </div>
+        </div>
+    </div>
+    <!-- blackcat: pager -->
+    <div class="blackcat-pager hide">
+        <div class="blackcat-link-links blackcat-wrapper">
+            <a><span>Prev</span></a>
+            <a><span>Next</span></a>
+        </div>
+    </div>
+    <!-- blackcat: copyright -->
+    <div class="blackcat-copyright">
+        <div class="blackcat-wrapper"></div>
+    </div>
+</blackcat-footer>
+<!-- blackcat: scripts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css/hint.base.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hezulong1/cnblogs@pro/icon/iconfont.css">
+<script src="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src="https://blog-static.cnblogs.com/files/blackcat/blackcat-scrollbar.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/layer/2.3/layer.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7fe74da29e98c818e083c29dee94a5ba";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    $(function () {
+        var storage = window.localStorage || window.sessionStorage
+        var $load = $('<blackcat-spinner data-timestamp="' + new Date().getTime() + '" />')
+
+        var util = {
+            setStore: function setStore(name, content) {
+                if (!name) return
+                if (typeof content !== 'string') {
+                    content = JSON.stringify(content)
+                }
+                storage.setItem(name, content)
+            },
+            getStore: function getStore(name) {
+                if (!name) return
+                return storage.getItem(name)
+            },
+            removeStore: function removeStore(name) {
+                if (!name) return
+                storage.removeItem(name)
+            },
+            openWindow: function (url) {
+                url = $.trim(url)
+                // Note：博客园中不可直接使用 window.open 方法
+                url && window['op' + 'en'](url)
+            },
+            scrollTo: function (pos, callback) {
+                $('#home > .view').animate({
+                    scrollTop: pos
+                }, 300, callback)
+            },
+            goTo: function (url, $scope) {
+                var isExtra = /^http(s*):\/\//.test(url)
+                var isID = /^#/.test(url) && url.length > 1
+                var $target
+
+                if (isExtra) {
+                    util.openWindow(url)
+                } else {
+                    if (isID) {
+                        if (!$scope || $scope.length <= 0) {
+                            $scope = $('#mainContent')
+                        }
+                        $target = $scope.find('[id="' + decodeURIComponent(url.slice(1)) + '"]')
+                    }
+
+                    if ($target && $target.length > 0) {
+                        var pos = $target.offset().top
+                        var prevPos = $('#home > .view').scrollTop()
+                        if (!$('#home blackcat-header').hasClass('down')) {
+                            pos -= 20
+                        }
+                        util.scrollTo(pos + prevPos, function () {
+                            window.location.hash = url
+                        })
+                    } else {
+                        util.scrollTo(0)
+                    }
+                }
+            }
+        }
+
+        // 配置上下页
+        function loadPrevNextMarkdown(config, callback) {
+            var id = config.markdown.id
+            var getInfo = function ($link) {
+                var ret = {
+                    href: null,
+                    label: null,
+                    date: null,
+                    time: null
+                }
+                if ($link.length > 0) {
+                    var array = $link.attr('title').split(' ')
+
+                    ret.href = $link.attr('href')
+                    ret.label = $.trim($link.text())
+                    ret.date = array.length > 1 ? array[1] : ''
+                    ret.time = array.length > 2 ? array[2] : ''
+                }
+                return ret
+            }
+
+            id && $.ajax({
+                url: config.blog.base + 'post/prevnext',
+                type: 'get',
+                dataType: 'html',
+                data: {
+                    postId: id
+                },
+                success: function (response) {
+                    var $res = $('<div>' + response + '</div>')
+                    var $prev = $res.find('a:eq(1)')
+                    var $next = $res.find('a:eq(3)')
+                    config.markdown.prev = getInfo($prev)
+                    config.markdown.next = getInfo($next)
+
+                    callback(config)
+                }
+            })
+        }
+
+        // 配置文章
+        function loadMarkdown(config) {
+            if (!config.markdown.id) return
+            var $wrapper = $('#topics .post')
+            var $desc = $wrapper.children('.postDesc')
+            var $title = $wrapper.children('.postTitle')
+
+            // 日期
+            var datetime = $.trim($desc.find('#post-date').text())
+            // 阅读数
+            var viewcount = $.trim($desc.find('#post_view_count').text())
+            // 评论
+            var commentcount = $.trim($desc.find('#post_comment_count').text())
+            // 推荐
+            var diggcount = $.trim($('#digg_count').text())
+
+            // 重绘缩略信息
+            $title.append(['<div class="blackcat-time">',
+                '<time class="hint--bottom" aria-label="日期"><i class="blackcat-icon-time"></i>' +
+                datetime + '</time>',
+                '<span class="hint--bottom" aria-label="浏览"><i class="blackcat-icon-eye"></i>' +
+                viewcount + '</span>',
+                '<span class="hint--bottom" aria-label="评论"><i class="blackcat-icon-comment"></i>' +
+                commentcount + '</span>',
+                '<span class="hint--bottom" aria-label="推荐"><i class="blackcat-icon-thumb_up"></i>' +
+                diggcount + '</span>',
+                '</div>'
+            ].join(''))
+
+            // 重绘文章的展示
+            var $markdown = $wrapper.find('#cnblogs_post_body')
+            // 为了兼容虚拟滚动条，为 pre 配置宽高
+            $markdown.find('pre').each(function (index, item) {
+                var $this = $(this)
+                $this.attr('data-timestamp', new Date().getTime())
+                var height = this.offsetHeight
+                $this.height(height)
+
+                var paddingBottom = 0
+
+                try {
+                    $this.attr('data-index', index)
+                    new Scrollbar({
+                        element: item,
+                        useShadow: true,
+                        beforeCreate: function () {
+                            paddingBottom = parseInt($this.css('paddingBottom'))
+                        },
+                        created: function () {
+                            var $view = $this.children('.view')
+                            $view.css('height', 'calc(100% - 40px)') // 解决伪类的高度问题
+                        },
+                        onUpdate: function () {
+                            var $observer = $this.find('.view .resize-observer')
+                            $observer.css('paddingBottom', paddingBottom + 40 + 'px')
+                        }
+                    }).create()
+                } catch (e) {
+                    $this.removeAttr('data-index')
+                }
+            })
+            // 添加锚点
+            var $h = $markdown.children('h2, h3, h4, h5')
+            $h.each(function (index, item) {
+                var $this = $(this)
+                var url = '#' + $this.attr('id')
+                $this.append('<a href="' + url + '"><span>#</span></a>')
+            })
+            // 所有的 a 标签绑定事件
+            var $anchor = $markdown.find('a')
+            $anchor.each(function (index) {
+                var $this = $(this)
+                var url = $this.attr('href')
+                $this.attr('data-index', index)
+                $this.attr('data-timestamp', new Date().getTime())
+                // 添加额外的标签
+                // var isExtra = /^http(s*):\/\//.test(url)
+                // isExtra && $this.append('<blackcat-extra><svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,1)"><rect id="bg" fill="rgba(0, 0, 0, .15)" x="0" y="2" width="9" height="9" rx="1.5"></rect><path d="M9.18198052,1 L6.5,1 L6.5,0 L11,0 L11,1 L11,4.5 L10,4.5 L10,1.59619408 L4.02512627,7.57106781 L3.31801948,6.86396103 L9.18198052,1 Z" id="arrow" fill="#18191b"></path></g></svg></blackcat-extra>')
+
+                var hasSpan = $this.children('span').length > 0
+                if (!hasSpan) {
+                    $this.html('<span>' + $this.html() + '</span>')
+                }
+            })
+            $anchor.on('click', function (e) {
+                e.preventDefault()
+                var url = $(this).attr('href')
+                url && util.goTo(url, $markdown)
+            })
+            // 图片缩略
+            $markdown.length > 0 && Viewer && new Viewer($markdown[0])
+        }
+
+        // 配置评论
+        function loadComment(config) {
+            if (!config.markdown.id) return
+            var $wrapper = $('#blog-comments-placeholder')
+            var comments = []
+
+            // 移除多余的 br
+            $wrapper.children('br').first().remove()
+            $('#under_post_news .recomm-block').children('br:eq(0)').remove()
+            // 获取信息/补充头像
+            $wrapper.children('.feedbackItem').each(function () {
+                var $this = $(this)
+                var $title = $this.find('.feedbackListSubtitle')
+                var $content = $this.find('.feedbackCon')
+
+                var commentId = $title.children('.layer').attr('href')
+                var commentAuthor = {
+                    blog: '',
+                    nickName: '',
+                    avatar: ''
+                }
+                var commentDate = $.trim($title.children('.comment_date').text())
+                if (commentId) {
+                    commentId = commentId.slice(1)
+                    var $author = $title.children('#a_comment_author_' + commentId)
+                    var $avatar = $content.children('#comment_' + commentId + '_avatar')
+                    commentAuthor.blog = $author.attr('href') || ''
+                    commentAuthor.nickName = $.trim($author.text()) || ''
+                    commentAuthor.avatar = $.trim($avatar.text()) || ''
+                    // 移除链接
+                    $author.addClass('hide')
+                    $author.after('<span style="font-size: 1em;" class="blackcat-time">' + commentAuthor
+                        .nickName + '</span>')
+                }
+                var isLouzhu = $title.children('.louzhu').length > 0
+
+                comments.push({
+                    id: commentId,
+                    date: commentDate,
+                    author: commentAuthor,
+                    louzhu: isLouzhu
+                })
+
+                if (commentAuthor.avatar && commentAuthor.blog) {
+                    $this.append('<a href="' + commentAuthor.blog +
+                        '" target="_blank"><img class="blackcat-avatar" src="' + commentAuthor
+                        .avatar + '"></a>')
+                }
+
+                // 移除CTRL+ENTER提示
+                $('#tip_comment2').next().addClass('hide')
+            })
+            config.markdown && (config.markdown.comments = comments)
+        }
+        // 配置META
+        function loadMeta(config) {
+            $('link[rel*="icon"]').remove()
+            var $favicon = $('<link rel="icon" href="' + config.blog.ico + '">')
+            $('title').after($favicon)
+        }
+
+        // 配置首页
+        function loadHomeList() {
+            var $days = $('#mainContent').find('.day')
+            $days.each(function (index, item) {
+                var $this = $(this)
+                var $title = $this.children('.postTitle')
+                var $content = $this.children('.postCon')
+                var $desc = $this.children('.postDesc')
+                var text
+                // 日期
+                text = $.trim($desc.text())
+                var datetime = text.slice(9, 19)
+                // 阅读数
+                text = $.trim($desc.children('.post-view-count').text())
+                var viewcount = text.replace(/[^\d]/g, '')
+                // 评论
+                text = $.trim($desc.children('.post-comment-count').text())
+                var commentcount = text.replace(/[^\d]/g, '')
+                // 推荐
+                text = $.trim($desc.children('.post-digg-count').text())
+                var diggcount = text.replace(/[^\d]/g, '')
+
+                text = ''
+
+                // 重绘置顶图标
+                var $postTitle = $title.children('.postTitle2')
+                $postTitle.length > 0 && $postTitle.html($postTitle.text().replace(/\[置顶\]/,
+                    '<span class="blackcat-badge">置顶</span>'))
+
+                // 重绘缩略信息
+                $title.append(['<div class="blackcat-time">',
+                    '<time class="hint--bottom" aria-label="日期"><i class="blackcat-icon-time"></i>' +
+                    datetime + '</time>',
+                    '<span class="hint--bottom" aria-label="浏览"><i class="blackcat-icon-eye"></i>' +
+                    viewcount + '</span>',
+                    '<span class="hint--bottom" aria-label="评论"><i class="blackcat-icon-comment"></i>' +
+                    commentcount + '</span>',
+                    '<span class="hint--bottom" aria-label="推荐"><i class="blackcat-icon-thumb_up"></i>' +
+                    diggcount + '</span>',
+                    '</div>'
+                ].join(''))
+
+                // 重绘阅读全文
+                var $readmore = $content.find('.c_b_p_desc_readmore')
+                $content.append('<div class="blackcat-readmore"><a class="blackcat-line-link" href="' +
+                    $readmore.attr('href') + '"><span>阅读全文</span></a></div>')
+            })
+
+        }
+
+        // 加载头部
+        function loadHeader(config) {
+            var $wrap = $('blackcat-header')
+            var $logo = $wrap.find('.blackcat-logo a')
+            var $nav = $wrap.find('.blackcat-menu:eq(0)')
+            var options = [{
+                    name: 'Home',
+                    href: config.blog.home,
+                    hideXs: false
+                },
+                {
+                    name: 'Take Note',
+                    href: config.blog.takeNote,
+                    hideXs: true
+                },
+                {
+                    name: 'Setting',
+                    href: config.blog.setting,
+                    hideXs: true
+                }
+            ]
+            $logo.html('<span>' + config.blog.title + '</span>').attr('href', config.blog.home)
+            $nav.html(options.map(function (opt) {
+                return '<li' + (opt.hideXs ? ' class="hide-xs"' : '') + '><a href="' + opt.href +
+                    '"><span>' + opt.name + '</span></a></li>'
+            }))
+
+            $('#home').prepend($wrap).prepend(document.createComment(' blackcat: header '))
+        }
+
+        // 加载主体
+        function loadMain(config) {
+            var $main = $('#home')
+            var $win = $(window)
+            var resize = function () {
+                $main.width(window.innerWidth)
+                $main.height(window.innerHeight)
+            }
+            resize()
+            $win.on('resize', resize)
+
+            // 渲染描述
+            loadHomeList()
+            // 文章
+            loadMarkdown(config)
+            // 评论
+            loadComment(config)
+
+            if (config.markdown.id) {
+                $('blackcat-header').addClass('static')
+                $('#mainContent').addClass('static')
+            }
+
+            try {
+                new Scrollbar({
+                    element: $main[0],
+                    onScroll: function (x, y) {
+                        if (!config.markdown.id) {
+                            if (y > 70) {
+                                $('blackcat-header').addClass('down')
+                            } else {
+                                $('blackcat-header').removeClass('down')
+                            }
+                        }
+                    }
+                }).create()
+            } catch (e) {
+                $main.width('')
+                $main.height('')
+                $win.off('resize', resize)
+                $win.on('scroll', function (e) {
+                    var scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop ||
+                        document.documentElement.scrollTop
+                    if (scrollTop > 70) {
+                        $('blackcat-header').addClass('down')
+                    } else {
+                        $('blackcat-header').removeClass('down')
+                    }
+                })
+            }
+        }
+
+        // 加载底部
+        function loadFooter(config) {
+            var $wrap = $('blackcat-footer')
+            var $author = $wrap.children('.blackcat-author')
+            var $pager = $wrap.children('.blackcat-pager')
+            var $copyright = $wrap.find('.blackcat-copyright .blackcat-wrapper')
+
+            if (config.markdown.id) {
+                // 加载博主信息
+                $author.find('.avatar img').attr('src', config.blogger.avatar)
+                $author.find('.nickname').html(config.blogger.nickName)
+                $author.find('.signature').html(config.blogger.signature)
+                $author.removeClass('hide')
+                // 加载分页
+                loadPrevNextMarkdown(config, function () {
+                    var $prev = $pager.find('a:eq(0)')
+                    var $next = $pager.find('a:eq(1)')
+                    config.markdown.prev.href ? $prev.attr('href', config.markdown.prev.href) : $prev
+                        .remove()
+                    config.markdown.next.href ? $next.attr('href', config.markdown.next.href) : $next
+                        .remove()
+                    $pager.removeClass('hide')
+                })
+            }
+            // 加载版权
+            $copyright.html('&copy;<span style="padding:0 5px">' + config.blogger.nickName + '</span>' + config
+                .blogger.blogAge.slice(0, 4) + ' - ' + new Date().getFullYear())
+            $('#home').append(document.createComment(' blackcat: footer ')).append($wrap)
+        }
+
+        var page = {
+            config: function () {
+                // 侧边栏公告
+                var $rawProfile = $('#profile_block')
+
+                // 博主信息
+                var blogger = {
+                    // 昵称
+                    nickName: $.trim($rawProfile.find('a:eq(0)').text()),
+                    // 签名
+                    signature: $.trim($('#blogTitle h2').text()),
+                    // 园龄
+                    blogAge: $rawProfile.find('a:eq(1)').attr('title').slice(-10),
+                    // 粉丝
+                    followers: $.trim($rawProfile.find('a:eq(2)').text()),
+                    // 关注
+                    followees: $.trim($rawProfile.find('a:eq(3)').text()),
+                    // 头像
+                    avatar: $('#author_profile_info > a > img').attr('src') ||
+                        'https://pic.cnblogs.com/avatar/1849509/20210427163305.png',
+                    // 'https://pic.cnblogs.com/avatar/1197507/20200511165706.png',
+                }
+
+                // 博客信息
+                var blog = {
+                    // Baseurl
+                    base: getAjaxBaseUrl(),
+                    // 编号
+                    id: window.currentBlogId || '',
+                    // App
+                    app: window.currentBlogApp || '',
+                    // 图标
+                    ico: 'https://gitee.com//riotian/blogimage/raw/master/img/20210119152411.png',
+                    // 是否登录
+                    login: window.isLogin || false,
+                    // 标题
+                    title: $.trim($('#Header1_HeaderTitle').text()),
+                    // 首页
+                    home: $('#blog_nav_myhome').attr('href'),
+                    // 博客园
+                    siteHome: $('#blog_nav_sitehome').attr('href'),
+                    // 新随笔
+                    takeNote: $('#blog_nav_newpost').attr('href'),
+                    // 管理
+                    setting: $('#blog_nav_admin').attr('href'),
+                    // 联系作者
+                    contactAuthor: $('#blog_nav_contact').attr('href'),
+                }
+
+                // 文章信息
+                var markdown = {
+                    // 编号
+                    id: window.cb_entryId, // 获取阅读数 loadViewCount() // currentBlogId
+                    // 生成日期
+                    create: window.cb_entryCreatedDate || '',
+                    // 上一篇
+                    prev: {},
+                    // 下一篇
+                    next: {},
+                    // 允许评论
+                    allowComment: window.allowComments || false,
+                    // 评论
+                    comments: []
+                }
+
+                var api = {
+                    comment: {
+                        getCount: function (id, callback) {
+                            return $.ajax({
+                                url: blog.base + 'GetCommentCount.aspx',
+                                data: {
+                                    postId: id,
+                                    '@t': new Date().getTime()
+                                },
+                                type: 'GET',
+                                dataType: 'text',
+                                cache: false,
+                                success: function (count) {
+                                    callback && callback(count)
+                                }
+                            })
+                        },
+                        getContent: function (params, callback) {
+                            return $.ajax({
+                                url: blog.base + 'GetComments.aspx?t=' + new Date()
+                                    .getTime(),
+                                data: params,
+                                type: 'GET',
+                                dataType: "text",
+                                cache: false,
+                                success: function (res) {
+                                    var $res = $('<div>' + res + '</div>')
+                                    callback && callback(res)
+                                }
+                            })
+                        }
+                    }
+                }
+
+                return {
+                    blogger: blogger,
+                    blog: blog,
+                    markdown: markdown,
+                    api: api
+                }
+            },
+
+            bindEvents: function () {
+                var config = page.config()
+
+                var evts = {
+                    // 配置搜索
+                    search: function () {
+                        if (!window.layer) return
+
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            closeBtn: false,
+                            shade: [0.6, '#fff'],
+                            shadeClose: true,
+                            maxWidth: 1000,
+                            skin: 'blackcat-layer-search',
+                            content: '<input autocomplete="off" placeholder="搜索内容，查询{ENTER}／关闭{ESC}" type="text" name="w">',
+                            success: function (layero, index) {
+                                var input = layero.find('input')
+                                input.focus()
+                                $(document).on('keydown.blackcat', function (e) {
+                                    var keyCode = e.keyCode || e.which
+                                    if (keyCode === 13) {
+                                        var keyword = input.val()
+                                        if (keyword.replace(/\s/g, '') ===
+                                            '') {
+                                            return false
+                                        }
+                                        keyword = encodeURIComponent(
+                                            'blog: ' + config.blog.app +
+                                            ' ' + keyword)
+                                        util.openWindow(
+                                            'http://zzk.cnblogs.com/s?w=' +
+                                            keyword)
+                                    }
+
+                                    if (keyCode === 13 || keyCode === 27) {
+                                        layer.close(index)
+                                    }
+                                })
+                            },
+                            end: function () {
+                                $(document).off('keydown.blackcat')
+                            }
+                        })
+                    }
+                }
+
+                $('[blackcat-event]').on('click.blackcat', function (e) {
+                    var $this = $(this)
+                    var type = $this.attr('blackcat-event')
+                    $.isFunction(evts[type]) && evts[type].call(this, e)
+                })
+
+                $('.blackcat-link-links a, a.blackcat-link-link').on('click', function (e) {
+                    e.preventDefault()
+                    var href = $(this).attr('href')
+                    var isBlank = $(this).attr('target') ===
+                        '_blank' // || /^http(s*):\/\//.test(href)
+                    if (href) {
+                        isBlank ? util.openWindow(href) : (window.location = href)
+                    }
+                })
+
+                // TODO 首次加载
+                var hash = window.location.hash
+                if (/^#/.test(hash)) {
+                    util.goTo(hash)
+                }
+            },
+
+            cache: function () {
+                page.els = {}
+
+                page.els.$window = $(window)
+                page.els.$body = $('body')
+                page.els.$top = $('.scroll-top')
+
+                $('body').append(page.els.$sidemask = $(
+                    '<div class="backmask nav__mask" style="display:none"/>'))
+            },
+
+            init: function () {
+                var config = window.BLACKCAT_CONFIG = page.config()
+
+                page.cache()
+                page.on_resize()
+                page.on_scroll()
+                page.detectMobile()
+                page.scrollToTop()
+                page.collapseSidebar()
+
+                loadMeta(config)
+                loadHeader(config)
+                loadFooter(config)
+                loadMain(config)
+
+                page.bindEvents()
+
+                $load.addClass('hide')
+            },
+
+            on_resize: function () {
+                page.els.$window.on('resize', function () {
+                    page.detectMobile()
+                }).resize()
+            },
+
+            on_scroll: function () {
+                page.els.$window.on('scroll', function () {
+                    if (page.els.$window.scrollTop() > 120) {
+                        $('.scroll-top').fadeIn()
+                    } else {
+                        $('.scroll-top').fadeOut()
+                    }
+                })
+            },
+
+            detectMobile: function () {
+                page.els.$body.removeClass('is-side-open')
+                $('.nav__toggle').removeClass('is-active')
+                page.els.$sidemask.hide();
+            },
+
+            collapseSidebar: function () {
+                $('.nav__toggle').on('click', function () {
+                    $('.nav__toggle').toggleClass('is-active')
+
+                    if ($('.nav__toggle').hasClass('is-active')) {
+                        page.els.$body.addClass('is-side-open')
+                        page.els.$sidemask.show()
+                    } else {
+                        page.els.$body.removeClass('is-side-open')
+                        page.els.$sidemask.hide()
+                    }
+                })
+
+                page.els.$sidemask.on('click', function () {
+                    page.detectMobile()
+                })
+            },
+
+            scrollToTop: function () {
+                $('#comment_nav').find('a[href^="#top"]').hide()
+                $('.scroll-top').click(function () {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 300)
+                    return false
+                })
+            }
+        }
+
+        // 等待所有资源加载完毕
+        var timer = -1
+        var count = 4 // 3次轮询机会，超过就不在加载脚本
+
+        var run = function () {
+            var isSidebarLoaded = $('#profile_block').length > 0
+            var isHeaderLoaded = $('blackcat-header').length > 0
+            var isFooterLoaded = $('blackcat-footer').length > 0
+            var isFaviconLoaded = $('link[rel*="icon"]').length > 0
+            var isCommandLoaded = window.allowComments === true
+            // var isCommandLoaded = window.allowComments === true && $.trim($('#blog-comments-placeholder').text()) !== ''
+            var loaded = (isSidebarLoaded && isHeaderLoaded && isFooterLoaded && isFaviconLoaded)
+
+            if (window.cb_entryId) {
+                loaded = loaded && isCommandLoaded
+            }
+
+            if (loaded) {
+                setTimeout(function () {
+                    page.init()
+                    count = 0
+                }, 2000)
+            } else {
+                timer = setTimeout(function () {
+                    clearTimeout(timer)
+                    count--
+
+                    if (count <= 0) {
+                        $load.addClass('hide')
+                    }
+
+                    count > 0 && run()
+                }, 500 + (4 - count) * 100)
+            }
+        }
+
+        // 启动
+        $('body').append($load)
+        run()
+    })
+</script>
