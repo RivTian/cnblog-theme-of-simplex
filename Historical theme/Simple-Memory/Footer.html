@@ -211,6 +211,32 @@
     }
 </script>
 
+<!-- 返回顶部功能-->
+<script type="text/javascript">
+    (function () {
+        var $backToTopTxt = "返回顶部",
+            $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+            .text($backToTopTxt).attr("title", $backToTopTxt).click(function () {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 120);
+            }),
+            $backToTopFun = function () {
+                var st = $(document).scrollTop(),
+                    winh = $(window).height();
+                (st > 0) ? $backToTopEle.show(): $backToTopEle.hide();
+                //IE6下的定位
+                if (!window.XMLHttpRequest) {
+                    $backToTopEle.css("top", st + winh - 166);
+                }
+            };
+        $(window).bind("scroll", $backToTopFun);
+        $(function () {
+            $backToTopFun();
+        });
+    })();
+</script>
+
 <!-- 莲 Live2D，缺点是 GPU占用太大了 + 人物加载会模糊很多-->
 <script src="https://blog-static.cnblogs.com/files/RioTian/live2dcubismcore.js"></script>
 <script src="https://blog-static.cnblogs.com/files/RioTian/bundle02.js"></script>
