@@ -237,6 +237,7 @@
     })();
 </script>
 
+
 <!-- 莲 Live2D，缺点是 GPU占用太大了 + 人物加载会模糊很多-->
 <script src="https://blog-static.cnblogs.com/files/RioTian/live2dcubismcore.js"></script>
 <script src="https://blog-static.cnblogs.com/files/RioTian/bundle02.js"></script>
@@ -248,4 +249,25 @@
     var backImageName = ''; // 指定背景图片 ,默认为空
     var modelDir = ['lian0']; // 指定需要加载的模型
     initDefine(resourcesPath, backImageName, modelDir); // 初始化模型
+</script>
+
+<!-- 底部加了小鱼<・)))><<~ -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<div id="jsi-flying-fish-container" class="container"></div>
+<script src='https://blog-static.cnblogs.com/files/elkyo/fish.js'></script>
+<style>
+    @media only screen and (max-width: 767px) {
+        #sidebar_search_box input[type=text] {
+            width: calc(100% - 24px)
+        }
+    }
+</style>
+<script>
+    document.addEventListener('readystatechange', function (_event) {
+        console.log(document.readyState);
+        if (document.readyState === "complete") {
+            console.log('初始DOM,加载解析完成');
+            $(".bacFixed").fadeOut(400);
+        }
+    });
 </script>
