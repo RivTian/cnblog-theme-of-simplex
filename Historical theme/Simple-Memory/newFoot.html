@@ -1,0 +1,271 @@
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.js"></script>
+
+<!-- 生成博客目录的JS代码，两级目录 -->
+<script type="text/javascript">
+    /*  
+        这段代码按H2、H3格式生成两级菜单
+        写博客按H2、H3格式写，不然生成不了
+        Markdown写作按##、###两级目录写
+        当然你也可以改写代码成三级菜单
+    */
+    var BlogDirectory = {
+        /* 获取元素位置，距浏览器左边界的距离（left）和距浏览器上边界的距离（top）*/
+        getElementPosition: function (ele) {
+            var topPosition = 0;
+            var leftPosition = 0;
+            while (ele) {
+                topPosition += ele.offsetTop;
+                leftPosition += ele.offsetLeft;
+                ele = ele.offsetParent;
+            }
+            return {
+                top: topPosition,
+                left: leftPosition
+            };
+        },
+        /*获取滚动条当前位置 */
+        getScrollBarPosition: function () {
+            var scrollBarPosition = document.body.scrollTop || document.documentElement.scrollTop;
+            return scrollBarPosition;
+        },
+        /* 移动滚动条，finalPos 为目的位置，internal 为移动速度 */
+        moveScrollBar: function (finalpos, interval) {
+            //若不支持此方法，则退出
+            if (!window.scrollTo) {
+                return false;
+            }
+
+            //窗体滚动时，禁用鼠标滚轮
+            window.onmousewheel = function () {
+                return false;
+            };
+
+            //清除计时
+            if (document.body.movement) {
+                clearTimeout(document.body.movement);
+            }
+
+            //获取滚动条当前位置
+            var currentpos = BlogDirectory.getScrollBarPosition();
+
+            var dist = 0;
+            //到达预定位置，则解禁鼠标滚轮，并退出
+            if (currentpos == finalpos) {
+                window.onmousewheel = function () {
+                    return true;
+                }
+                return true;
+            }
+            //未到达，则计算下一步所要移动的距离
+            if (currentpos < finalpos) {
+                dist = Math.ceil((finalpos - currentpos) / 10);
+                currentpos += dist;
+            }
+            if (currentpos > finalpos) {
+                dist = Math.ceil((currentpos - finalpos) / 10);
+                currentpos -= dist;
+            }
+
+            var scrTop = BlogDirectory.getScrollBarPosition(); //获取滚动条当前位置
+            window.scrollTo(0, currentpos); //移动窗口
+            if (BlogDirectory.getScrollBarPosition() == scrTop) //若已到底部，则解禁鼠标滚轮，并退出
+            {
+                window.onmousewheel = function () {
+                    return true;
+                }
+                return true;
+            }
+
+            //进行下一步移动
+            var repeat = "BlogDirectory.moveScrollBar(" + finalpos + "," + interval + ")";
+            document.body.movement = setTimeout(repeat, interval);
+        },
+
+        htmlDecode: function (text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        },
+
+        /*
+        创建博客目录，id表示包含博文正文的 div 容器的 id，
+        mt 和 st 分别表示主标题和次级标题的标签名称（如 H2、H3，大写或小写都可以！），
+        interval 表示移动的速度
+        */
+        createBlogDirectory: function (id, mt, st, interval) {
+            //获取博文正文div容器
+            var elem = document.getElementById(id);
+            if (!elem) return false;
+            //获取div中所有元素结点
+            var nodes = elem.getElementsByTagName("*");
+            //创建博客目录的div容器
+            var divSideBar = document.createElement('DIV');
+            divSideBar.className = 'uprightsideBar';
+            divSideBar.setAttribute('id', 'uprightsideBar');
+
+            var divSideBarTab = document.createElement('DIV');
+            divSideBarTab.setAttribute('id', 'sideBarTab');
+
+            var p = document.createElement('p');
+            divSideBarTab.appendChild(p);
+            var txt = document.createTextNode('📖目录');
+            p.setAttribute('id', 'catalogHeadTitle');
+            p.appendChild(txt);
+
+            var divSideBarContents = document.createElement('DIV');
+            divSideBarContents.style.display = 'none';
+            divSideBarContents.setAttribute('id', 'sideBarContents');
+
+            divSideBar.appendChild(divSideBarTab);
+            divSideBar.appendChild(divSideBarContents);
+
+            //创建自定义列表
+            var dlist = document.createElement("dl");
+            divSideBarContents.appendChild(dlist);
+            var num = 0; //统计找到的mt和st
+            mt = mt.toUpperCase(); //转化成大写
+            st = st.toUpperCase(); //转化成大写
+            //遍历所有元素结点
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].nodeName == mt || nodes[i].nodeName == st) {
+                    //获取标题文本
+                    var nodetext = nodes[i].innerHTML.replace(/<\/?[^>]+>/g,
+                        ""); //innerHTML里面的内容可能有HTML标签，所以用正则表达式去除HTML的标签
+                    // nodetext = nodetext.replace(/ /ig, "");//替换掉所有的空格
+                    nodetext = BlogDirectory.htmlDecode(nodetext);
+                    //插入锚
+                    nodes[i].setAttribute("id", "blogTitle" + num);
+                    var item;
+                    switch (nodes[i].nodeName) {
+                        case mt: //若为主标题
+                            item = document.createElement("dt");
+                            var itemtext = document.createTextNode(nodetext);
+                            break;
+                        case st: //若为子标题
+                            item = document.createElement("dd");
+                            var itemtext = document.createTextNode('• ' + nodetext);
+                            break;
+                    }
+
+                    //创建锚链接
+                    item.appendChild(itemtext);
+                    item.setAttribute("name", num);
+                    //添加鼠标点击触发函数
+                    item.onclick = function () {
+                        var pos = BlogDirectory.getElementPosition(document.getElementById("blogTitle" +
+                            this.getAttribute("name")));
+                        if (!BlogDirectory.moveScrollBar(pos.top, interval)) return false;
+                    };
+                    //将自定义表项加入自定义列表中
+                    dlist.appendChild(item);
+                    num++;
+                }
+            }
+
+            if (num == 0) return false;
+            // 如果是移动端，通过点击的方式来显示或隐藏目录
+            // 如果是PC端，通过鼠标聚焦的方式来显示或隐藏
+            if (isMobile()) {
+                divSideBarContents.style.borderRadius = '0px 6px 6px 6px';
+                divSideBar.onclick = function () {
+                    var status = divSideBarContents.style.display;
+                    if (status == 'block') {
+                        document.getElementById('catalogHeadTitle').innerText = '📖目录';
+                        divSideBarTab.style.borderRadius = '6px';
+                        divSideBarContents.style.display = 'none';
+                    } else if (status == 'none') {
+                        document.getElementById('catalogHeadTitle').innerText = '❎关闭';
+                        divSideBarTab.style.borderRadius = '6px 0px 0px 6px';
+                        divSideBarContents.style.display = 'block';
+                    }
+                }
+            } else {
+                /* 鼠标进入时的事件处理 */
+                divSideBarTab.onmouseenter = function () {
+                    divSideBarContents.style.display = 'block';
+                }
+                /* 鼠标离开时的事件处理 */
+                divSideBar.onmouseleave = function () {
+                    divSideBarContents.style.display = 'none';
+                }
+            }
+            document.body.appendChild(divSideBar);
+        }
+
+    };
+
+    // 判断浏览器函数
+    function isMobile() {
+        if (window.navigator.userAgent.match(
+                /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+            )) {
+            return true; // 移动端
+        } else {
+            return false; // PC端
+        }
+    }
+
+    window.onload = function () {
+        /* 页面加载完成之后生成博客目录 */
+        BlogDirectory.createBlogDirectory("cnblogs_post_body", "h2", "h3", 20);
+    }
+</script>
+
+<!-- 返回顶部功能-->
+<script type="text/javascript">
+    (function () {
+        var $backToTopTxt = "返回顶部",
+            $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+            .text($backToTopTxt).attr("title", $backToTopTxt).click(function () {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 120);
+            }),
+            $backToTopFun = function () {
+                var st = $(document).scrollTop(),
+                    winh = $(window).height();
+                (st > 0) ? $backToTopEle.show(): $backToTopEle.hide();
+                //IE6下的定位
+                if (!window.XMLHttpRequest) {
+                    $backToTopEle.css("top", st + winh - 166);
+                }
+            };
+        $(window).bind("scroll", $backToTopFun);
+        $(function () {
+            $backToTopFun();
+        });
+    })();
+</script>
+
+<!-- Chatra {literal} -->
+<script>
+    (function (d, w, c) {
+        w.ChatraID = 'DG4xk9nE2HXoMr7GD';
+        var s = d.createElement('script');
+        w[c] = w[c] || function () {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+
+
+<script>
+    // fancybox
+    $(".cnblogs-markdown img").each(function () {
+        var element = document.createElement("a");
+        // 点击增大以及点击前往另一个页面
+        // $(element).attr("data-fancybox", "gallery");
+        // $(element).attr("href", $(this).attr("src"));
+        $(element).attr('data-caption', $(this).attr("alt"));
+        $(this).wrap(element);
+        if ($(this).attr("alt") != "") {
+            $(this).parent().after('<div class="img-caption">' + $(this).attr("alt") + '</div>');
+        }
+    })
+</script>
