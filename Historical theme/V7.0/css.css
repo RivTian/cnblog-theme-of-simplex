@@ -1,3 +1,18 @@
+body {
+    background-color: whitesmoke;
+}
+
+/*修改背景颜色为半透明*/
+
+#home,
+#sideBarMain>div,
+#blog-sidecolumn>div>div,
+.catListView {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/*修改其他边框的颜色*/
+
 .git-link {
     z-index: 100;
     position: fixed;
@@ -198,7 +213,7 @@ div.commentform p {
     color: #333;
     border: 2px solid #fff;
     box-shadow: inset 0 0 8px #aaa;
-    // padding:10px;
+    /* padding:10px; */
     height: 250px;
     font-size: 14px;
     min-height: 120px;
@@ -253,20 +268,7 @@ div.commentform p {
     margin-bottom: 15px;
 }
 
-body {
-    background-color: whitesmoke;
-}
 
-/*修改背景颜色为半透明*/
-
-#home,
-#sideBarMain>div,
-#blog-sidecolumn>div>div,
-.catListView {
-    background-color: rgba(255, 255, 255, 0);
-}
-
-/*修改其他边框的颜色*/
 
 
 /* 关注收藏等几个按钮 */
