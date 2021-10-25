@@ -14,306 +14,6 @@
     background-image: url(//images2015.cnblogs.com/blog/459873/201603/459873-20160317090540131-1089895320.png);
 }
 
-/*不显示底部广告*/
-#ad_t2,
-#cnblogs_c1,
-#under_post_news,
-#cnblogs_c2,
-#under_post_kb {
-    display: none;
-     !important
-}
-
-/*返回顶部 + 首页配置使用*/
-.backToTop {
-    border: 1px dashed;
-    display: none;
-    width: 18px;
-    line-height: 1.2;
-    padding: 5px 0;
-    background-color: #fff;
-    color: #000;
-    font-size: 12px;
-    text-align: center;
-    position: fixed;
-    _position: absolute;
-    right: 10px;
-    bottom: 100px;
-    _bottom: "auto";
-    cursor: pointer;
-    opacity: .6;
-    filter: Alpha(opacity=60);
-}
-
-/*为代码添加一键复制功能按钮，配合页脚两个文件引入使用*/
-.cnblogs-markdown pre {
-    position: relative;
-}
-
-.cnblogs-markdown pre>span {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 2px;
-    padding: 0 10px;
-    font-size: 12px;
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    cursor: pointer;
-    display: none;
-}
-
-.cnblogs-markdown pre:hover>span {
-    display: block;
-}
-
-.cnblogs-markdown pre>.copyed {
-    background: #67c23a;
-}
-
-
-/*将推荐|反对按钮固定悬浮于屏幕右下角*/
-#div_digg {
-    position: fixed;
-    bottom: 5px;
-    width: 140px;
-    right: 30px;
-    border: 2px solid #085;
-    padding: 10px;
-    background-color: #fff;
-    opacity: 0.3;
-    border-radius: 5px 5px 5px 5px !important;
-    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
-    transition-duration: 0.5s;
-}
-
-#div_digg:hover {
-    opacity: 1;
-}
-
-
-
-
-/*修改引用格式*/
-#cnblogs_post_body h6,
-blockquote {
-    line-height: 20px;
-    margin: 0 0 24px;
-    padding: 1.45em;
-    color: #313131;
-    background-color: #f7f7f7;
-    font-size: 14px;
-    border-left: 4px solid #ddd;
-    font-weight: 400;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
-    min-height: 0;
-    background: #f7f7f7 !important;
-}
-
-blockquote p {
-    margin: 0 !important;
-    padding: 0;
-    text-indent: 0 !important
-}
-
-/*下面是我设置背景色，字体大小和字体*/
-.cnblogs-markdown code {
-    background: #fff !important;
-}
-
-.cnblogs_code,
-.cnblogs_code span,
-.cnblogs-markdown .hljs {
-    font-size: 16px !important;
-}
-
-.syntaxhighlighter a,
-.syntaxhighlighter div,
-.syntaxhighlighter code,
-.syntaxhighlighter table,
-.syntaxhighlighter table td,
-.syntaxhighlighter table tr,
-.syntaxhighlighter table tbody,
-.syntaxhighlighter table thead,
-.syntaxhighlighter table caption,
-.syntaxhighlighter textarea {
-    font-size: 16px !important;
-}
-
-.cnblogs_code,
-.cnblogs_code span,
-.cnblogs-markdown .hljs {
-    font-family: consolas, "Source Code Pro", monaco, monospace !important;
-}
-
-/*
-     * Visual Studio 2015 dark style
-     * Author: Nicolas LLOBERA <nllobera@gmail.com>
-     */
-
-pre {
-    /*控制代码不换行*/
-    white-space: pre;
-    word-wrap: normal;
-}
-
-/*makedown行间代码样式 */
-.cnblogs-markdown code {
-    color: #c7254e;
-    border: none !important;
-    font-size: 1em !important;
-    background-color: #f9f2f4 !important;
-    font-family: sans-serif !important;
-}
-
-.cnblogs-markdown .hljs {
-    display: block;
-    overflow: auto;
-    padding: 1.3em 2em !important;
-    font-size: 13px !important;
-    background: #272822 !important;
-    color: #FFF;
-    max-height: 700px;
-}
-
-.hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: #1E1E1E;
-    color: #DCDCDC;
-}
-
-.hljs-keyword,
-.hljs-literal,
-.hljs-symbol,
-.hljs-name {
-    color: #569CD6;
-}
-
-.hljs-link {
-    color: #569CD6;
-    text-decoration: underline;
-}
-
-.hljs-built_in,
-.hljs-type {
-    color: #4EC9B0;
-}
-
-.hljs-number,
-.hljs-class {
-    color: #B8D7A3;
-}
-
-.hljs-string,
-.hljs-meta-string {
-    color: #D69D85;
-}
-
-.hljs-regexp,
-.hljs-template-tag {
-    color: #9A5334;
-}
-
-.hljs-subst,
-.hljs-function,
-.hljs-title,
-.hljs-params,
-.hljs-formula {
-    color: #DCDCDC;
-}
-
-.hljs-comment,
-.hljs-quote {
-    color: #57A64A;
-    font-style: italic;
-}
-
-.hljs-doctag {
-    color: #608B4E;
-}
-
-.hljs-meta,
-.hljs-meta-keyword,
-.hljs-tag {
-    color: #9B9B9B;
-}
-
-.hljs-variable,
-.hljs-template-variable {
-    color: #BD63C5;
-}
-
-.hljs-attr,
-.hljs-attribute,
-.hljs-builtin-name {
-    color: #9CDCFE;
-}
-
-.hljs-section {
-    color: gold;
-}
-
-.hljs-emphasis {
-    font-style: italic;
-}
-
-.hljs-strong {
-    font-weight: bold;
-}
-
-/*.hljs-code {
-      font-family:'Monospace';
-    }*/
-
-.hljs-bullet,
-.hljs-selector-tag,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-    color: #D7BA7D;
-}
-
-.hljs-addition {
-    background-color: #144212;
-    display: inline-block;
-    width: 100%;
-}
-
-.hljs-deletion {
-    background-color: #600;
-    display: inline-block;
-    width: 100%;
-}
-
-/*版权声明CSS*/
-/*版权声明样式*/
-/* #MySignature {
-    border: solid 1px #E5E5E5;
-    padding: 10px;
-    background: #E5EEF7 url(https://files-cdn.cnblogs.com/files/acgoto/o_o_o_info.ico) no-repeat scroll 15px 50%;
-    padding-left: 80px;
-} 
-
-#MySignature div {
-    line-height: 20px;
-}*/
-
-/* 内部悬停扩大，效果不是很好 */
-/* .post img {
-    cursor: pointer;
-    transition: all 0.5s;
-}
-
-.post img:hover {
-    transform: scale(1.3);
-} */
-
-
 /*simplememory*/
 #google_ad_c1,
 #google_ad_c2 {
@@ -334,7 +34,8 @@ pre {
 }
 
 #home {
-    opacity: 0.95;
+    opacity: 0.93;
+    /* 0.95 */
     margin: 0 auto;
     width: 65%;
     min-width: 950px;
@@ -349,8 +50,7 @@ pre {
     height: 400px;
     /*高度*/
     clear: both;
-    /* background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805072615v2-78bbe4b2f59be1fa81b852157af37a59_r.jpg"); */
-    background: url("https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210306165250.jpg");
+    background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_211001120053%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%A0%87%E9%A2%98%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87.png");
     background-size: cover;
 }
 
@@ -359,7 +59,8 @@ pre {
     line-height: 8.0em;
     font-family: "Comic Sans MS";
     margin-top: 20px;
-    padding-left: 600px;
+    /* padding-left:350px; */
+    padding-left: 35%;
 }
 
 #blogTitle h1 a {
@@ -383,10 +84,11 @@ pre {
     text-decoration: none;
 }
 
+/* 随笔文章评论阅读那一列，调height可上下移动 */
 #navList a {
     display: block;
     width: 5em;
-    height: 22px;
+    height: 35px;
     float: left;
     text-align: center;
     padding-top: 18px;
@@ -420,8 +122,7 @@ pre {
 
 body {
     color: #000;
-    /* background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed; */
-    background: url("https://cdn.jsdelivr.net/gh/Kanna-jiahe/blogimage/img/20210201134306.jpg") fixed;
+    background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed;
     background-size: 100%;
     background-repeat: no-repeat;
     font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
@@ -551,3 +252,75 @@ div.commentform p {
     font-weight: normal;
     margin-bottom: 15px;
 }
+
+body {
+    background-color: whitesmoke;
+}
+
+/*修改背景颜色为半透明*/
+
+#home,
+#sideBarMain>div,
+#blog-sidecolumn>div>div,
+.catListView {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/*修改其他边框的颜色*/
+
+
+/* 关注收藏等几个按钮 */
+#green_channel {
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+    width: 400px;
+}
+
+#green_channel a {
+    border-radius: 5px;
+    text-shadow: none;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+/* 禁用下划线 */
+.postBody a:link,
+.postBody a:visited,
+.postBody a:active {
+    text-decoration: none;
+}
+
+/* 上一篇下一篇 */
+#post_next_prev {
+    font-size: 14px;
+    color: #535353;
+}
+
+/*隐藏广告*/
+#ad_t2,
+#cnblogs_c1,
+#under_post_news,
+#cnblogs_c2,
+#under_post_kb {
+    display: none;
+}
+
+/*个性签名*/
+#MySignature {
+    box-shadow: 8px 1px 10px #989898;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #FFF;
+    font-size: 17px;
+    border-left: solid 5px #55895B;
+    background: #F3F3F3;
+    border-radius: 10px 10px 50% 10px;
+    line-height: 2.4;
+    margin: 40px 0;
+}
+
+/*底部隐藏作者*/
+/* #author_profile {
+    display: none;
+} */
