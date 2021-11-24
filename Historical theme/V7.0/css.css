@@ -65,7 +65,8 @@ body {
     height: 400px;
     /*高度*/
     clear: both;
-    background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_211001120053%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%A0%87%E9%A2%98%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87.png");
+    background: url("https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_211119012057_Header.png");
+    /* background: url("https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_211124115303_01.PNG"); */
     background-size: cover;
 }
 
@@ -137,7 +138,8 @@ body {
 
 body {
     color: #000;
-    background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed;
+    background: url("https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_211124114422_%E5%A4%A7%E6%B5%B7015.jpg") fixed;
+    /* background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed; */
     background-size: 100%;
     background-repeat: no-repeat;
     font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
@@ -305,12 +307,45 @@ div.commentform p {
 #cnblogs_c1,
 #under_post_news,
 #cnblogs_c2,
-#under_post_kb {
+#under_post_kb,
+.itnews,
+.c_ad_block,
+#opt_under_post,
+#cnblogs_ch {
+    display: none !important;
+}
+
+/*添加按钮*/
+.cnblogs-markdown pre {
+    position: relative;
+}
+
+.cnblogs-markdown pre>span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    cursor: pointer;
+    /*注释下面这一行，button一直显示*/
     display: none;
 }
 
+.cnblogs-markdown pre:hover>span {
+    display: block;
+}
+
+.cnblogs-markdown pre>.copyed {
+    background: #67c23a;
+}
+
+
+
 /*个性签名*/
-#MySignature {
+/* #MySignature {
     box-shadow: 8px 1px 10px #989898;
     padding: 10px;
     text-shadow: 1px 1px 1px #FFF;
@@ -320,9 +355,9 @@ div.commentform p {
     border-radius: 10px 10px 50% 10px;
     line-height: 2.4;
     margin: 40px 0;
-}
+} */
 
 /*底部隐藏作者*/
-/* #author_profile {
+#author_profile {
     display: none;
-} */
+}

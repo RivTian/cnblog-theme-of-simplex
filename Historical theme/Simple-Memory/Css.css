@@ -1,65 +1,64 @@
 @import url(https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css) screen and (min-width:0px);
 
-
 .navbar {
-  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.15);
+  box-shadow: 0 2px 6px rgba(100, 100, 100, .15)
 }
 
 #EntryTag {
   margin-top: 20px;
   font-size: 9pt;
-  color: #808080;
+  color: #808080
 }
 
 .topicListFooter {
   text-align: right;
   margin-right: 10px;
-  margin-top: 10px;
+  margin-top: 10px
 }
 
 #divRefreshComments {
   text-align: right;
   margin-right: 10px;
   margin-bottom: 5px;
-  font-size: 9pt;
+  font-size: 9pt
 }
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 0
 }
 
 html {
-  height: 100%;
+  height: 100%
 }
 
 body {
   color: #000;
-  background-color: #ffffff;
+  background-color: #e6e6e6;
+
   background: url("https://cdn.jsdelivr.net/gh/RivTian/Blogimg/img/20210917155542.png") fixed;
+  /* background: url("https://images.cnblogs.com/cnblogs_com/lonelyprince7/1821378/o_200805035103back.jpg") fixed; */
   /* background-repeat: no-repeat; */
   background-size: cover;
   /* background-attachment: fixed; */
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Georgia",
-    "Sitka Text", "Noto Serif CJK SC", "Microsoft YaHei", Arial, Helvetica,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Georgia", "Sitka Text", "Noto Serif CJK SC", "Microsoft YaHei", Arial, Helvetica, sans-serif;
   font-size: 12px;
-  /* min-height: 101%; */
+  min-height: 101%
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
+  border-spacing: 0
 }
 
 fieldset,
 img {
-  border: 0;
+  border: 0
 }
 
 li {
-  list-style: none;
+  list-style: none
 }
 
 h1,
@@ -69,35 +68,35 @@ h4,
 h5,
 h6 {
   font-size: 100%;
-  font-weight: normal;
+  font-weight: normal
 }
 
 a {
   outline: none;
-  color: #21759b;
+  color: #21759b
 }
 
 a:link {
   color: #000;
-  text-decoration: none;
+  text-decoration: none
 }
 
 a:visited {
   color: #000;
-  text-decoration: none;
+  text-decoration: none
 }
 
 a:hover {
-  color: #21759b;
+  color: #21759b
 }
 
 a:active {
   color: #000;
-  text-decoration: none;
+  text-decoration: none
 }
 
 .clear {
-  clear: both;
+  clear: both
 }
 
 #home {
@@ -106,7 +105,7 @@ a:active {
   background-color: #fff;
   padding: 30px;
   margin: 50px auto;
-  box-shadow: 0 2px 15px rgba(100, 100, 100, 0.3);
+  box-shadow: 0 2px 15px rgba(100, 100, 100, .3)
 }
 
 /* 为了让 home 底部的 margin-bottom 显示正常 */
@@ -122,31 +121,31 @@ a:active {
 
 #blogTitle {
   height: 60px;
-  clear: both;
+  clear: both
 }
 
 #blogTitle h1 {
   font-size: 26px;
   font-weight: bold;
   line-height: 1.5em;
-  margin-top: 20px;
+  margin-top: 20px
 }
 
 #blogTitle h1 a {
-  color: #515151;
+  color: #515151
 }
 
 #blogTitle h1 a:hover {
-  color: #21759b;
+  color: #21759b
 }
 
 #blogTitle h2 {
   font-weight: normal;
   font-size: 13px;
-  font-size: 0.928571429rem;
+  font-size: .928571429rem;
   line-height: 1.846153846;
   color: #757575;
-  float: left;
+  float: left
 }
 
 #navigator {
@@ -155,12 +154,12 @@ a:active {
   border-top: 1px solid #ededed;
   height: 50px;
   clear: both;
-  margin-top: 25px;
+  margin-top: 25px
 }
 
 #navList {
   min-height: 30px;
-  float: left;
+  float: left
 }
 
 #navList li {
@@ -177,12 +176,12 @@ a:active {
 #navList a:visited,
 #navList a:active {
   color: #6a6a6a;
-  font-weight: bold;
+  font-weight: bold
 }
 
 #navList a:hover {
-  color: #000;
-  text-decoration: none;
+  color: #21759b;
+  text-decoration: none
 }
 
 #navList>li:hover ul {
@@ -232,31 +231,18 @@ ul#navList {
   _height: 10px;
   margin-bottom: 20px;
   padding-bottom: 5px;
-  position: relative;
+  position: relative
 }
 
 .dayTitle {
   display: none;
-  border: 1px solid #21759b;
-  background: #f0ffff;
-  border-radius: 50%;
-  font-size: 12px;
-  height: 65px;
-  line-height: 1.5;
-  margin: 15px;
-  text-align: center;
-  width: 63px;
-  margin-left: -100px;
-  clear: both;
-  position: absolute;
-  top: -15px;
 }
 
 .dayTitle a {
   display: inline-block;
   color: #21759b;
   margin-top: 15px;
-  width: 60px;
+  width: 60px
 }
 
 .postTitle {
@@ -265,20 +251,19 @@ ul#navList {
   font-size: 20px;
   float: right;
   width: 100%;
-  clear: both;
+  clear: both
 }
 
 .postTitle a:link,
 .postTitle a:visited,
 .postTitle a:active {
   color: #21759b;
-  transition: all 0.4s linear 0s;
+  transition: all .4s linear 0s
 }
 
 .postTitle a:hover {
   margin-left: 30px;
-  color: #0f3647;
-  text-decoration: none;
+  text-decoration: none
 }
 
 .postCon {
@@ -286,11 +271,11 @@ ul#navList {
   line-height: 1.5em;
   width: 100%;
   clear: both;
-  padding: 10px 0;
+  padding: 10px 0
 }
 
 .day .postTitle a {
-  padding-left: 10px;
+  padding-left: 10px
 }
 
 .postDesc {
@@ -304,18 +289,18 @@ ul#navList {
   padding-left: 20px;
   padding-right: 5px;
   margin-top: 20px;
-  line-height: 1.5;
+  line-height: 1.5
 }
 
 .postDesc a:link,
 .postDesc a:visited,
 .postDesc a:active {
-  color: #666;
+  color: #666
 }
 
 .postDesc a:hover {
   color: #21759b;
-  text-decoration: none;
+  text-decoration: none
 }
 
 .postSeparator {
@@ -324,21 +309,21 @@ ul#navList {
   width: 100%;
   clear: both;
   float: right;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 15px auto
 }
 
 .div_my_zzk {
   width: 175px;
   position: relative;
-  margin-top: 10px;
+  margin-top: 10px
 }
 
 #btnZzk {
-  background: url("images/blog_search.png") no-repeat 5px 5px;
+  background: url("images/blog_search.png") no-repeat 5px 5px
 }
 
-#widget_my_google input[type="button"] {
-  background: url("images/google_search.png") no-repeat 5px 5px;
+#widget_my_google input[type=button] {
+  background: url("images/google_search.png") no-repeat 5px 5px
 }
 
 .input_my_zzk {
@@ -347,7 +332,7 @@ ul#navList {
   height: 25px;
   padding-right: 30px;
   padding-left: 5px;
-  outline: 0;
+  outline: 0
 }
 
 .btn_my_zzk {
@@ -360,16 +345,16 @@ ul#navList {
   cursor: pointer;
   top: 1px;
   position: absolute;
-  right: -35px;
+  right: -35px
 }
 
 .input_my_zzk:hover {
   border: 1px solid #21759b;
-  transition: all 0.4s linear 0s;
+  transition: all .4s linear 0s
 }
 
 .input_my_zzk:focus {
-  border: 1px solid #21759b;
+  border: 1px solid #21759b
 }
 
 .newsItem,
@@ -390,7 +375,7 @@ ul#navList {
 .catListArticleCategory {
   background: #fff;
   margin-bottom: 35px;
-  word-wrap: break-word;
+  word-wrap: break-word
 }
 
 #blog-calendar {
@@ -398,16 +383,16 @@ ul#navList {
   padding-bottom: 5px;
   margin-bottom: 35px;
   box-shadow: 0 1px 3px #ccc;
-  border: 1px solid #ededed;
+  border: 1px solid #ededed
 }
 
 #blog-calendar td {
   font-size: 12px;
-  font-family: "Comic Sans MS";
+  font-family: "Comic Sans MS"
 }
 
 #blog-calendar th {
-  font-size: 12px;
+  font-size: 12px
 }
 
 #calendar {
@@ -415,51 +400,51 @@ ul#navList {
   padding-bottom: 5px;
   margin-bottom: 35px;
   border: 1px solid #ededed;
-  box-shadow: 0 1px 3px #ccc;
+  box-shadow: 0 1px 3px #ccc
 }
 
 #calendar .Cal {
   width: 100%;
-  line-height: 1.5em;
+  line-height: 1.5em
 }
 
 #calendar td {
   font-family: "Comic Sans MS";
   background: #fff;
-  padding-top: 2px;
+  padding-top: 2px
 }
 
 .Cal {
   border: none;
-  color: #666;
+  color: #666
 }
 
 #calendar table a:link,
 #calendar table a:visited,
 #calendar table a:active {
-  font-weight: bold;
+  font-weight: bold
 }
 
 #calendar table a:hover {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none
 }
 
 .CalTodayDay {
   background: #3671a5 !important;
   color: #fff;
-  font-weight: bold;
+  font-weight: bold
 }
 
 .CalWeekendDay {
   padding-top: 4px;
-  padding-bottom: 4px;
+  padding-bottom: 4px
 }
 
 .CalOtherMonthDay {
   color: #ccc;
   padding-top: 4px;
-  padding-bottom: 4px;
+  padding-bottom: 4px
 }
 
 #calendar .CalNextPrev a:link,
@@ -467,13 +452,13 @@ ul#navList {
 #calendar .CalNextPrev a:active {
   font-weight: bold;
   padding-left: 10px;
-  padding-right: 15px;
+  padding-right: 15px
 }
 
 .CalDayHeader {
   background: #f8f8f8;
   font-weight: 100;
-  color: #5e5f63;
+  color: #5e5f63
 }
 
 .CalTitle {
@@ -484,14 +469,14 @@ ul#navList {
   font-size: 14px;
   font-weight: bold;
   padding: 5px 0;
-  color: #fff;
+  color: #fff
 }
 
 .CalTitle td {
   background: #f8f8f8 !important;
   border: 0 !important;
   color: #5e5f63;
-  font-family: "Comic Sans MS";
+  font-family: "Comic Sans MS"
 }
 
 .catListTitle {
@@ -500,25 +485,25 @@ ul#navList {
   font-size: 110%;
   margin-top: 15px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: left
 }
 
 .catListComment {
-  line-height: 1.5em;
+  line-height: 1.5em
 }
 
 .divRecentComment {
   text-indent: 2em;
   color: #494949;
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
 #sideBarMain ul {
-  line-height: 1.5em;
+  line-height: 1.5em
 }
 
 #sideBarMain li {
-  line-height: 1.8;
+  line-height: 1.8
 }
 
 #topics {
@@ -528,7 +513,7 @@ ul#navList {
   float: left;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow: hidden
 }
 
 #topics .postTitle {
@@ -538,11 +523,11 @@ ul#navList {
   float: left;
   line-height: 1.5;
   width: 100%;
-  padding-left: 5px;
+  padding-left: 5px
 }
 
 #EntryTag {
-  color: #666;
+  color: #666
 }
 
 #EntryTag a {
@@ -554,23 +539,23 @@ ul#navList {
   border-radius: 10px;
   margin: 2px 5px 0;
   background: #e7e7e7;
-  text-decoration: none;
+  text-decoration: none
 }
 
 #EntryTag a:link,
 #EntryTag a:visited,
 #EntryTag a:active {
-  color: #666;
+  color: #666
 }
 
 #EntryTag a:hover {
   color: #f5f5f5;
   background: #21759b;
-  transition: all 0.4s linear 0s;
+  transition: all .4s linear 0s
 }
 
 #BlogPostCategory {
-  color: #666;
+  color: #666
 }
 
 #BlogPostCategory a {
@@ -582,18 +567,18 @@ ul#navList {
   border-radius: 10px;
   margin: 2px 5px 0;
   background: #e7e7e7;
-  text-decoration: none;
+  text-decoration: none
 }
 
 #BlogPostCategory a:link,
 #BlogPostCategory a:visited,
 #BlogPostCategory a:active {
-  color: #666;
+  color: #666
 }
 
 #BlogPostCategory a:hover {
   color: #f5f5f5;
-  background: #21759b;
+  background: #21759b
 }
 
 #topics .postDesc {
@@ -602,13 +587,13 @@ ul#navList {
   text-align: left;
   color: #666;
   margin-top: 5px;
-  background: none;
+  background: none
 }
 
 .feedback_area_title {
   font: normal normal 16px/35px "Microsoft YaHei";
   margin: 10px 0 30px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ccc
 }
 
 .louzhu {
@@ -620,27 +605,27 @@ ul#navList {
 .feedbackListSubtitle a:visited,
 .feedbackListSubtitle a:active {
   color: #21759b;
-  font-weight: bold;
+  font-weight: bold
 }
 
 .feedbackListSubtitle a:hover {
   color: #21759b;
-  text-decoration: underline;
+  text-decoration: underline
 }
 
 .feedbackListSubtitle b {
-  color: #21759b;
+  color: #21759b
 }
 
 .feedbackManage {
   width: 200px;
   text-align: right;
-  float: right;
+  float: right
 }
 
 #divRefreshComments {
   text-align: right;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 
 .commenttb {
@@ -652,39 +637,32 @@ ul#navList {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  width: 320px;
+  width: 320px
 }
 
 .commenttb:hover {
-  color: #333;
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(82, 168, 236, .8);
   outline: 0;
-  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  transition: all 0.4s linear 0s;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  transition: all .4s linear 0s
 }
 
 .commentTextBox {
   width: 410px !important;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 
 .commentTextBox:hover {
   color: #333;
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(82, 168, 236, .8);
   outline: 0;
-  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  transition: all 0.4s linear 0s;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  transition: all .4s linear 0s
 }
 
 #AjaxHolder_PostComment_btnSubmit {
@@ -697,37 +675,37 @@ ul#navList {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   outline: none;
-  text-decoration: none;
+  text-decoration: none
 }
 
 #AjaxHolder_PostComment_btnSubmit:hover {
-  background: #333;
+  background: #333
 }
 
 #AjaxHolder_PostComment_divCommnentArea tr {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 
 .comment_vote {
-  padding-right: 10px;
+  padding-right: 10px
 }
 
 .comment_vote a {
-  color: #999;
+  color: #999
 }
 
 .comment_vote a:hover {
-  color: #21759b;
+  color: #21759b
 }
 
 #commentform_title {
@@ -735,7 +713,7 @@ ul#navList {
   margin: 10px 0 30px;
   border-bottom: 2px solid #ccc;
   background-image: none;
-  padding: 0;
+  padding: 0
 }
 
 #comment_form_container .author {
@@ -747,20 +725,20 @@ ul#navList {
   -webkit-border-radius: 3px;
   width: 320px;
   height: 20px;
-  background-image: none;
+  background-image: none
 }
 
 #comment_form_container p {
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
 .commentbox_title_left {
-  font-size: 14px;
+  font-size: 14px
 }
 
 .commentbox_title_right {
-  float: left;
+  float: left
 }
 
 #comment_form_container .comment_textarea {
@@ -771,17 +749,22 @@ ul#navList {
   border: 1px solid #ddd;
   border-radius: 3px;
   -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  -webkit-border-radius: 3px
 }
 
 #comment_form_container .comment_textarea:hover {
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(82, 168, 236, .8);
   outline: 0;
-  transition: all 0.4s linear 0s;
+  transition: all .4s linear 0s
 }
 
 #comment_form_container .comment_textarea:focus {
-  outline: 0;
+  outline: 0
+}
+
+/* 未登录的提示 */
+.login_tips {
+  display: none;
 }
 
 .comment_btn {
@@ -796,31 +779,27 @@ ul#navList {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   outline: none;
-  text-decoration: none;
+  text-decoration: none
 }
 
 .comment_btn:hover {
-  background: #333;
+  background: #2e99cb
 }
 
 .entrylistTitle,
 .PostListTitle,
 .thumbTitle {
-  margin-bottom: 25px;
-  height: 38px;
-  line-height: 38px;
-  font-size: 16px;
-  border-bottom: 2px solid #e6e6e6;
-  color: #21759b;
+  font-size: 18px;
+  color: #21759b
 }
 
 .entrylistDescription {
@@ -838,7 +817,7 @@ ul#navList {
   margin-bottom: 30px;
   padding-bottom: 50px;
   padding-top: 10px;
-  width: 100%;
+  width: 100%
 }
 
 .entrylistPosttitle {
@@ -846,42 +825,41 @@ ul#navList {
   margin-bottom: 10px;
   border-left: 3px solid #21759b;
   font-size: 20px;
-  width: 100%;
+  width: 100%
 }
 
 .entrylistPosttitle a:link,
 .entrylistPosttitle a:visited,
 .entrylistPosttitle a:active {
   color: #21759b;
-  transition: all 0.4s linear 0s;
+  transition: all .4s linear 0s
 }
 
 .entrylistPosttitle a:hover {
   margin-left: 30px;
-  color: #0f3647;
-  text-decoration: none;
+  text-decoration: none
 }
 
 .entrylistPostSummary {
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 5px
 }
 
 .entrylistItemPostDesc {
   margin-top: 20px;
   text-align: left;
   color: #757575;
-  padding-left: 5px;
+  padding-left: 5px
 }
 
 .entrylistItemPostDesc a:link,
 .entrylistItemPostDesc a:visited,
 .entrylistItemPostDesc a:active {
-  color: #666;
+  color: #666
 }
 
 .entrylistItemPostDesc a:hover {
-  color: #21759b;
+  color: #21759b
 }
 
 .entrylist .postSeparator {
@@ -892,16 +870,16 @@ ul#navList {
   margin: 0;
   padding: 0;
   height: 0;
-  border: none;
+  border: none
 }
 
 .divRecentCommentAticle a {
-  color: #000;
+  color: #000
 }
 
 .pager {
   text-align: right;
-  margin-right: 10px;
+  margin-right: 10px
 }
 
 .pager a {
@@ -909,11 +887,15 @@ ul#navList {
   border: 1px solid #3671a5;
   background: #3671a5;
   color: #fff;
-  transition: all 0.4s linear 0s;
+  transition: all .4s linear 0s
 }
 
 .pager a:hover {
-  background: #000;
+  background: #000
+}
+
+#myposts {
+  margin-left: 0px;
 }
 
 .PostList {
@@ -921,81 +903,76 @@ ul#navList {
   clear: both;
   min-height: 1.5em;
   _height: 1.5em;
-  padding-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
 }
 
 .postTitl2 {
   float: left;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 14px;
+  font-size: 15px
 }
 
 .postDesc2 {
   color: #666;
-  float: right;
+  float: right
 }
 
 .postText2 {
   clear: both;
-  color: #757575;
+  color: #757575
 }
 
 .pfl_feedback_area_title {
   text-align: right;
   line-height: 1.5em;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 
 .pfl_feedbackItem {
   border: 1px dashed #ccc;
   padding: 10px;
   border-radius: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
 .pfl_feedbacksubtitle {
   width: 100%;
-  height: 1.5em;
+  height: 1.5em
 }
 
 .pfl_feedbackname {
-  float: left;
+  float: left
 }
 
 .pfl_feedbackname a {
   color: #21759b;
-  font-weight: bold;
+  font-weight: bold
 }
 
 .pfl_feedbackManage {
-  float: right;
+  float: right
 }
 
 .pfl_feedbackCon {
   color: #000;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 5px
 }
 
 .pfl_feedbackAnswer {
   color: #f40;
-  text-indent: 2em;
+  text-indent: 2em
 }
 
 .tdSentMessage {
-  text-align: right;
+  text-align: right
 }
 
 .errorMessage {
   width: 300px;
-  float: left;
+  float: left
 }
 
-#Profile1_panelAdd input[type="text"],
+#Profile1_panelAdd input[type=text],
 #Profile1_txtContent {
   padding: 8px;
   margin-bottom: 10px;
@@ -1003,30 +980,27 @@ ul#navList {
   border: 1px solid #ddd;
   border-radius: 3px;
   -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  -webkit-border-radius: 3px
 }
 
-#Profile1_panelAdd input[type="text"]:hover,
+#Profile1_panelAdd input[type=text]:hover,
 #Profile1_txtContent:hover {
   color: #333;
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(82, 168, 236, .8);
   outline: 0;
-  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 4px rgba(82, 168, 236, 0.6);
-  transition: all 0.4s linear 0s;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .075), 0 0 4px rgba(82, 168, 236, .6);
+  transition: all .4s linear 0s
 }
 
-#Profile1_panelAdd input[type="text"]:focus,
+#Profile1_panelAdd input[type=text]:focus,
 #Profile1_txtContent:focus {
   outline: 0;
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(82, 168, 236, .8)
 }
 
-#Profile1_panelAdd input[type="submit"] {
+#Profile1_panelAdd input[type=submit] {
   padding: 8px 20px;
   text-align: center;
   font-size: 14px;
@@ -1036,20 +1010,20 @@ ul#navList {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   outline: none;
-  text-decoration: none;
+  text-decoration: none
 }
 
-#Profile1_panelAdd input[type="submit"]:hover {
-  background: #333;
+#Profile1_panelAdd input[type=submit]:hover {
+  background: #333
 }
 
 .feedbackListSubtitle {
@@ -1060,7 +1034,7 @@ ul#navList {
 .divPhoto {
   border: 1px solid #ccc;
   padding: 2px;
-  margin-right: 10px;
+  margin-right: 10px
 }
 
 .thumbDescription {
@@ -1069,82 +1043,86 @@ ul#navList {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 30px
 }
 
 .personInfo {
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
 .pages {
-  text-align: right;
+  text-align: right
 }
 
 .postBody {
   color: #000;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 14px
 }
 
 .postBody p,
 .postCon p {
   text-indent: 2em;
-  margin: 0 auto 1em auto;
+  margin: 0 auto 1em auto
 }
 
 .postBody h2 {
-  margin-top: 40px !important;
+  margin-top: 60px !important;
 }
 
 .postBody h4 {
   font-size: 110%;
   margin: 15px auto 2px auto;
   font-weight: bold;
-  color: #333;
+  color: #333
 }
 
 .postBody h5 {
   font-size: 100%;
   margin: 15px auto 2px auto;
   font-weight: bold;
-  color: #333;
+  color: #333
 }
 
 .postBody a:link,
 .postBody a:visited,
 .postBody a:active {
-  text-decoration: underline;
+  text-decoration: underline
 }
 
 .postCon a:link,
 .postCon a:visited,
 .postCon a:active {
-  text-decoration: underline;
+  text-decoration: underline
+}
+
+.c_b_p_desc_readmore {
+  text-decoration: underline !important;
 }
 
 .postBody ul,
 .postCon ul {
-  margin-left: 2em;
+  margin-left: 2em
 }
 
 .postBody li,
 .postCon li {
   list-style-type: disc;
-  margin-bottom: 1em;
+  margin-bottom: 1em
 }
 
 .myposts_title {
   font-weight: bold;
-  text-align: center;
+  text-align: center
 }
 
 .c_b_p_desc {
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.7
 }
 
 #cnblogs_post_body img {
-  max-width: 700px;
+  max-width: 700px
 }
 
 #top_nav,
@@ -1202,12 +1180,9 @@ h1.entrylistTitle {
   margin-right: 20px;
 }
 
-#blogTitle {}
-
 #blogTitle>h1 {
   line-height: 70px;
-  font-family: "Chalkduster", "Segoe Script", Arial, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Chalkduster", "Segoe Script", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 30px;
   margin: 10px 20px;
   padding: 0;
@@ -1267,9 +1242,7 @@ div.day>div.postTitle {
   border: none !important;
   font-size: 14px !important;
   white-space: pre-wrap;
-  font-family: "monospace", "Menlo", "Fira Code Retina", "Cascadia Code",
-    "Consolas", "Dejavu Sans Mono", "Courier New", "Noto Serif CJK SC",
-    sans-serif !important;
+  font-family: "monospace", "Menlo", "Fira Code Retina", "Cascadia Code", "Consolas", "Dejavu Sans Mono", "Courier New", "Noto Serif CJK SC", sans-serif !important;
 }
 
 .cnblogs-markdown .hljs,
@@ -1279,12 +1252,13 @@ div.day>div.postTitle {
 
 .cnblogs-markdown code,
 .cnblogs-post-body code {
-  margin: 0;
+  color: black !important;
 }
 
 .postBody blockquote code,
 .feedbackCon .blog_comment_body code {
   background: none !important;
+  color: lightslategray !important;
 }
 
 #topics .postBody blockquote {
@@ -1316,7 +1290,8 @@ div.day>div.postTitle {
 .recomm-block,
 .c_ad_block,
 .comment_vote,
-div.under-comment-nav {
+div.under-comment-nav,
+#cnblogs_ch {
   display: none;
 }
 
@@ -1427,9 +1402,7 @@ h5,
 h6,
 .postTitle>.postTitle2,
 .entrylistPosttitle>.entrylistItemTitle {
-  font-family: -apple-system, BlinkMacSystemFont, "Microsoft Yahei", "Georgia",
-    "Segoe UI", "Roboto", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft Yahei", "Georgia", "Segoe UI", "Roboto", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
 }
 
 ul.submenu {
@@ -1479,215 +1452,278 @@ ul.submenu {
   color: darkviolet;
 }
 
-/************** markdown img设置 开始 ***************/
-@media screen and (min-width:0) {
-  .cnblogs-markdown {
-    line-height: 1.8;
-  }
-
-  /* 超链接悬浮出现下划线 */
-  /* .cnblogs-markdown a {
-    color: var(--color-primary);
-  } */
-
-  .fancybox-image {
-    max-width: 100% !important;
-  }
-
-  .img-caption {
-    text-align: center;
-    width: fit-content;
-    min-width: 20%;
-    max-width: 80%;
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color-extra-linght);
-    font-size: 13px;
-    color: #999;
-  }
-
-  #cnblogs_post_body p img {
-    width: auto;
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-  }
+.hljs-comment {
+  color: cornflowerblue;
 }
 
-/************** markdown img设置 结束 ***************/
+.hljs>.bash {
+  color: #2b91af;
+}
 
-@media screen and (max-width: 1024px) {
+
+
+
+/* 修改分割线样式 */
+hr {
+  background-image: repeating-linear-gradient(-45deg,
+      #ddd,
+      #ddd 4px,
+      transparent 4px,
+      transparent 8px);
+  border: 0;
+  height: 3px;
+  margin: 40px 0;
+}
+
+/* 博客园插入视频CSS部分 */
+#cnblogs_post_body .video {
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  position: relative;
+  width: 100%;
+}
+
+#cnblogs_post_body .video iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+pre {
+  /* 4个空格进行缩进*/
+  tab-size: 4
+}
+
+/*返回顶部 + 首页配置使用*/
+.backToTop {
+  border: 1px dashed;
+  display: none;
+  width: 18px;
+  line-height: 1.2;
+  padding: 5px 0;
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+  position: fixed;
+  _position: absolute;
+  right: 10px;
+  bottom: 100px;
+  _bottom: "auto";
+  cursor: pointer;
+  opacity: .6;
+  filter: Alpha(opacity=60);
+}
+
+details {
+  border-left: 4px solid orange;
+  font-size: 16px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+details.warn {
+  border-left: 4px solid orange;
+  padding: 2px 5px 2px 5px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+
+details>summary {
+  padding: 0em 0em 0em 1em;
+  color: orange;
+}
+
+details.warn>summary {
+  padding: 0em 0em 0em 1em;
+  color: orange;
+}
+
+/* 关闭评论区 */
+
+#comment_form_container {
+  display: none;
+}
+
+#comment_nav {
+  display: none;
+}
+
+@media screen and (max-width:1024px) {
   body {
     font-size: 14px !important;
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: none
   }
 
   #bannerbar img {
     width: 100% !important;
     max-width: 100% !important;
-    max-height: 70px;
+    max-height: 70px
   }
 
   .formobile {
-    display: block;
+    display: block
   }
 
   .forpc {
-    display: none !important;
+    display: none !important
   }
 
   #blog_nav_rss {
-    display: none !important;
+    display: none !important
   }
 
   #blog_nav_rss_image {
-    display: none !important;
+    display: none !important
   }
 
   #blog_nav_newpost {
-    display: none !important;
+    display: none !important
   }
 
   .cnblogs-post-body img,
   .blog_comment_body img {
     max-width: 300px !important;
-    height: auto;
+    height: auto
   }
 
   div.commentform textarea {
-    min-height: 200px;
+    min-height: 200px
   }
 
   .commentbox_title {
-    width: auto;
+    width: auto
   }
 
   #green_channel {
-    width: 320px;
+    width: 320px
   }
 
   #cnblogs_post_body table[style] {
     width: auto !important;
-    height: auto !important;
+    height: auto !important
   }
 
-  #sidebar_search_box input[type="text"] {
-    width: 260px;
+  #sidebar_search_box input[type=text] {
+    width: 260px
   }
 
   #cnblogs_post_body table {
     display: block;
     overflow-x: scroll;
-    -webkit-overflow-scrolling: regular;
+    -webkit-overflow-scrolling: regular
   }
 
   #cnblogs_post_body table::-webkit-scrollbar:horizontal {
-    height: 12px;
+    height: 12px
   }
 
   #cnblogs_post_body table::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     border-radius: 10px;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5
   }
 
   #cnblogs_post_body table::-webkit-scrollbar {
     width: 12px;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5
   }
 
   #cnblogs_post_body table::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #555;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555
   }
 
   #cnblogs_c1,
   #cnblogs_c2 {
     text-align: center;
-    margin: 10px auto 0 auto;
+    margin: 10px auto 0 auto
   }
 
   #cnblogs_c1 {
-    width: 300px;
+    width: 300px
   }
 
   #cnblogs_c2 {
     overflow: hidden;
-    display: none;
+    display: none
   }
 
   .commentform {
-    margin-left: 10px;
+    margin-left: 10px
   }
 
   .commentbox_tab {
-    width: 100%;
+    width: 100%
   }
 
   .comment_textarea {
-    width: 100%;
+    width: 100%
   }
 
   div.commentform textarea {
-    font-size: 16px;
+    font-size: 16px
   }
 
   .commentbox_title_right,
   .commentbox_title_left {
     width: 100%;
     max-width: 100%;
-    justify-content: space-between;
+    justify-content: space-between
   }
 
   .commentbox_title_right {
-    padding: 8px 5px;
+    padding: 8px 5px
   }
 
   .navbar {
-    display: none;
+    display: none
   }
 
   #mainContent {
     margin-left: 0;
     float: none;
     width: 100% !important;
-    padding-right: 0 !important;
+    padding-right: 0 !important
   }
 
   #mainContent .forFlow {
-    margin-left: 0 !important;
+    margin-left: 0 !important
   }
 
   #sideBar {
     float: none;
     width: auto;
-    margin-top: 10px;
+    margin-top: 10px
   }
 
   #home {
     width: auto;
     min-width: 0;
     margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-right: 0 !important
   }
 
   #blog_stats {
-    margin-bottom: 20px;
+    margin-bottom: 20px
   }
 
   .postTitle {
-    float: none;
+    float: none
   }
 
   #navList a {
-    width: auto;
+    width: auto
   }
 
   #topics .postTitle {
-    width: auto;
+    width: auto
   }
 
   #home {
@@ -1756,100 +1792,41 @@ ul.submenu {
   }
 }
 
-/* 博客园插入视频CSS部分 */
-#cnblogs_post_body .video {
-  height: 0;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  position: relative;
-  width: 100%;
+/************** markdown img设置 开始 ***************/
+@media screen and (min-width:0) {
+  .cnblogs-markdown {
+    line-height: 1.8;
+  }
+
+  /* 超链接悬浮出现下划线 */
+  /* .cnblogs-markdown a {
+    color: var(--color-primary);
+  } */
+
+  .fancybox-image {
+    max-width: 100% !important;
+  }
+
+  .img-caption {
+    text-align: center;
+    width: fit-content;
+    min-width: 20%;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color-extra-linght);
+    font-size: 13px;
+    color: #999;
+  }
+
+  #cnblogs_post_body p img {
+    width: auto;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+  }
 }
 
-#cnblogs_post_body .video iframe {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* 修改分割线样式 */
-hr {
-  background-image: repeating-linear-gradient(-45deg,
-      #ddd,
-      #ddd 4px,
-      transparent 4px,
-      transparent 8px);
-  border: 0;
-  height: 3px;
-  margin: 40px 0;
-}
-
-pre {
-  /* 4个空格进行缩进*/
-  tab-size: 4
-}
-
-/*返回顶部 + 首页配置使用*/
-.backToTop {
-  border: 1px dashed;
-  display: none;
-  width: 18px;
-  line-height: 1.2;
-  padding: 5px 0;
-  background-color: #fff;
-  color: #000;
-  font-size: 12px;
-  text-align: center;
-  position: fixed;
-  _position: absolute;
-  right: 10px;
-  bottom: 100px;
-  _bottom: "auto";
-  cursor: pointer;
-  opacity: .6;
-  filter: Alpha(opacity=60);
-}
-
-
-
-details {
-  border-left: 4px solid orange;
-  font-size: 16px;
-  padding: 2px 5px 2px 5px;
-  border-radius: 2px;
-  box-shadow: 2px 2px 9px 0px #d2c5c5;
-}
-
-details.warn {
-  border-left: 4px solid orange;
-  padding: 2px 5px 2px 5px;
-  border-radius: 2px;
-  box-shadow: 2px 2px 9px 0px #d2c5c5;
-}
-
-
-details>summary {
-  padding: 0em 0em 0em 1em;
-  color: orange;
-}
-
-details.warn>summary {
-  padding: 0em 0em 0em 1em;
-  color: orange;
-}
-
-/* 关闭评论区 */
-
-#comment_form_container {
-  display: none;
-}
-
-#comment_nav {
-  display: none;
-}
-
-/* 不显示页脚 */
-#footer {
-  display: none;
-}
+/************** markdown img设置 结束 ***************/

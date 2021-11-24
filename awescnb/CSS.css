@@ -226,3 +226,15 @@ details.warn>summary {
     padding: 0em 0em 0em 1em;
     color: orange;
 }
+
+#ad_t2,
+#cnblogs_c1,
+#under_post_news,
+#cnblogs_c2,
+#under_post_kb,
+.itnews,
+.c_ad_block,
+#opt_under_post,
+#cnblogs_ch {
+    display: none !important;
+}
