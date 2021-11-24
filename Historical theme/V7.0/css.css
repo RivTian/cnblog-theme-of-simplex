@@ -361,3 +361,50 @@ div.commentform p {
 #author_profile {
     display: none;
 }
+
+/*返回顶部 + 首页配置使用*/
+.backToTop {
+    border: 1px dashed;
+    display: none;
+    width: 18px;
+    line-height: 1.2;
+    padding: 5px 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    right: 10px;
+    bottom: 100px;
+    _bottom: "auto";
+    cursor: pointer;
+    opacity: .6;
+    filter: Alpha(opacity=60);
+}
+
+details {
+    border-left: 4px solid orange;
+    font-size: 16px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+details.warn {
+    border-left: 4px solid orange;
+    padding: 2px 5px 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+
+details>summary {
+    padding: 0em 0em 0em 1em;
+    color: orange;
+}
+
+details.warn>summary {
+    padding: 0em 0em 0em 1em;
+    color: orange;
+}
