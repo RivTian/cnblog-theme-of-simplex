@@ -201,6 +201,41 @@
     }
 }
 
+/*=========== 自定义 CSS  ============*/
+/* 修改分割线样式 */
+hr {
+    background-image: repeating-linear-gradient(-45deg,
+            #ddd,
+            #ddd 4px,
+            transparent 4px,
+            transparent 8px);
+    border: 0;
+    height: 3px;
+    margin: 40px 0;
+}
+
+/* 博客园插入视频CSS部分 */
+#cnblogs_post_body .video {
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    position: relative;
+    width: 100%;
+}
+
+#cnblogs_post_body .video iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+pre {
+    /* 4个空格进行缩进*/
+    tab-size: 4
+}
+
 details {
     border-left: 4px solid orange;
     font-size: 16px;
@@ -225,6 +260,28 @@ details>summary {
 details.warn>summary {
     padding: 0em 0em 0em 1em;
     color: orange;
+}
+
+.postBody blockquote code,
+.feedbackCon .blog_comment_body code {
+    background: none !important;
+    color: lightslategray !important;
+}
+
+#topics .postBody blockquote {
+    border: none;
+    border-left: 5px solid CornflowerBlue;
+    border-radius: 5px;
+    background: aliceblue;
+    color: gray;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.postBody blockquote {
+    min-height: 35px;
+    _height: 35px;
+    line-height: 1.6em;
 }
 
 #ad_t2,
