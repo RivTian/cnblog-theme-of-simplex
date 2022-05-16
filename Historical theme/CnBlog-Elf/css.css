@@ -1,0 +1,178 @@
+@import url(https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css) screen and (min-width:0px);
+/* 关注收藏等几个按钮 */
+#green_channel {
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+    width: 400px;
+}
+
+#green_channel a {
+    border-radius: 5px;
+    text-shadow: none;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+/* 禁用下划线 */
+/* .postBody a:link,
+.postBody a:visited,
+.postBody a:active {
+    text-decoration: none;
+} */
+
+/* 上一篇下一篇 */
+#post_next_prev {
+    font-size: 14px;
+    color: #535353;
+}
+
+/*隐藏广告*/
+#ad_t2,
+#cnblogs_c1,
+#under_post_news,
+#cnblogs_c2,
+#under_post_kb,
+.itnews,
+.c_ad_block,
+#opt_under_post,
+#cnblogs_ch {
+    display: none !important;
+}
+
+/* 修改分割线样式 */
+hr {
+    background-image: repeating-linear-gradient(-45deg,
+            #ddd,
+            #ddd 4px,
+            transparent 4px,
+            transparent 8px);
+    border: 0;
+    height: 3px;
+    margin: 40px 0;
+}
+
+/* 博客园插入视频CSS部分 */
+#cnblogs_post_body .video {
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    position: relative;
+    width: 100%;
+}
+
+#cnblogs_post_body .video iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+pre {
+    /* 4个空格进行缩进*/
+    tab-size: 4
+}
+
+/*添加按钮*/
+.cnblogs-markdown pre {
+    position: relative;
+}
+
+.cnblogs-markdown pre>span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    cursor: pointer;
+    /*注释下面这一行，button一直显示*/
+    display: none;
+}
+
+.cnblogs-markdown pre:hover>span {
+    display: block;
+}
+
+.cnblogs-markdown pre>.copyed {
+    background: #67c23a;
+}
+
+
+/*底部隐藏作者*/
+#author_profile {
+    display: none;
+}
+
+/*返回顶部 + 首页配置使用*/
+.backToTop {
+    border: 1px dashed;
+    display: none;
+    width: 18px;
+    line-height: 1.2;
+    padding: 5px 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    right: 10px;
+    bottom: 100px;
+    _bottom: "auto";
+    cursor: pointer;
+    opacity: .6;
+    filter: Alpha(opacity=60);
+}
+
+details {
+    border-left: 4px solid orange;
+    font-size: 16px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+details.warn {
+    border-left: 4px solid orange;
+    padding: 2px 5px 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+
+details>summary {
+    padding: 0em 0em 0em 1em;
+    color: orange;
+}
+
+details.warn>summary {
+    padding: 0em 0em 0em 1em;
+    color: orange;
+}
+
+.postBody blockquote code,
+.feedbackCon .blog_comment_body code {
+    background: none !important;
+    color: lightslategray !important;
+}
+
+#topics .postBody blockquote {
+    border: none;
+    border-left: 5px solid CornflowerBlue;
+    border-radius: 5px;
+    background: aliceblue;
+    color: gray;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.postBody blockquote {
+    min-height: 35px;
+    _height: 35px;
+    line-height: 1.6em;
+}
