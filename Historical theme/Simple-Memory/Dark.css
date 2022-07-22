@@ -1803,3 +1803,280 @@ details.warn>summary {
 #footer {
     display: none;
 }
+
+@media screen and (max-width:1024px) {
+    body {
+      font-size: 14px !important;
+      -webkit-text-size-adjust: none
+    }
+  
+    #bannerbar img {
+      width: 100% !important;
+      max-width: 100% !important;
+      max-height: 70px
+    }
+  
+    .formobile {
+      display: block
+    }
+  
+    .forpc {
+      display: none !important
+    }
+  
+    #blog_nav_rss {
+      display: none !important
+    }
+  
+    #blog_nav_rss_image {
+      display: none !important
+    }
+  
+    #blog_nav_newpost {
+      display: none !important
+    }
+  
+    .cnblogs-post-body img,
+    .blog_comment_body img {
+      max-width: 300px !important;
+      height: auto
+    }
+  
+    div.commentform textarea {
+      min-height: 200px
+    }
+  
+    .commentbox_title {
+      width: auto
+    }
+  
+    #green_channel {
+      width: 320px
+    }
+  
+    #cnblogs_post_body table[style] {
+      width: auto !important;
+      height: auto !important
+    }
+  
+    #sidebar_search_box input[type=text] {
+      width: 260px
+    }
+  
+    #cnblogs_post_body table {
+      display: block;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: regular
+    }
+  
+    #cnblogs_post_body table::-webkit-scrollbar:horizontal {
+      height: 12px
+    }
+  
+    #cnblogs_post_body table::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+      border-radius: 10px;
+      background-color: #f5f5f5
+    }
+  
+    #cnblogs_post_body table::-webkit-scrollbar {
+      width: 12px;
+      background-color: #f5f5f5
+    }
+  
+    #cnblogs_post_body table::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+      background-color: #555
+    }
+  
+    #cnblogs_c1,
+    #cnblogs_c2 {
+      text-align: center;
+      margin: 10px auto 0 auto
+    }
+  
+    #cnblogs_c1 {
+      width: 300px
+    }
+  
+    #cnblogs_c2 {
+      overflow: hidden;
+      display: none
+    }
+  
+    .commentform {
+      margin-left: 10px
+    }
+  
+    .commentbox_tab {
+      width: 100%
+    }
+  
+    .comment_textarea {
+      width: 100%
+    }
+  
+    div.commentform textarea {
+      font-size: 16px
+    }
+  
+    .commentbox_title_right,
+    .commentbox_title_left {
+      width: 100%;
+      max-width: 100%;
+      justify-content: space-between
+    }
+  
+    .commentbox_title_right {
+      padding: 8px 5px
+    }
+  
+    .navbar {
+      display: none
+    }
+  
+    #mainContent {
+      margin-left: 0;
+      float: none;
+      width: 100% !important;
+      padding-right: 0 !important
+    }
+  
+    #mainContent .forFlow {
+      margin-left: 0 !important
+    }
+  
+    #sideBar {
+      float: none;
+      width: auto;
+      margin-top: 10px
+    }
+  
+    #home {
+      width: auto;
+      min-width: 0;
+      margin-left: 0 !important;
+      margin-right: 0 !important
+    }
+  
+    #blog_stats {
+      margin-bottom: 20px
+    }
+  
+    .postTitle {
+      float: none
+    }
+  
+    #navList a {
+      width: auto
+    }
+  
+    #topics .postTitle {
+      width: auto
+    }
+  
+    #home {
+      margin: 0;
+      padding: 30px !important;
+    }
+  
+    #main {
+      width: 100%;
+    }
+  
+    #mainContent {
+      width: auto;
+      margin-right: 10px;
+    }
+  
+    #header {
+      margin: 0 0;
+    }
+  
+    #blogTitle {
+      margin: 0px;
+    }
+  
+    ul#navList {
+      margin: 10px auto 20px 0;
+      width: 100%;
+    }
+  
+    #blogTitle>h1 {
+      margin-top: 0;
+      font-size: 27px;
+    }
+  
+    #navList>li {
+      width: calc(100% / 4);
+      max-width: 100px;
+      margin: 15px 0px;
+    }
+  
+    #uprightsideBar {
+      top: 70px;
+    }
+  
+    #sideBarContents {
+      max-height: calc(100vh * 0.8 - 80px) !important;
+      width: auto;
+      max-width: calc(100vw - 50px);
+      min-width: 200px;
+    }
+  
+    #sideBarContents {}
+  
+    #sideBarTab,
+    #sideBarContents {
+      background: rgb(230, 230, 230, 0.9);
+      border: none;
+    }
+  
+    .commentform {
+      margin-left: 0 !important;
+    }
+  
+    #footer {
+      /*display:none;*/
+    }
+  }
+  
+  /************** markdown img设置 开始 ***************/
+  @media screen and (min-width:0) {
+    .cnblogs-markdown {
+      line-height: 1.8;
+    }
+  
+    /* 超链接悬浮出现下划线 */
+    /* .cnblogs-markdown a {
+      color: var(--color-primary);
+    } */
+  
+    .fancybox-image {
+      max-width: 100% !important;
+    }
+  
+    .img-caption {
+      text-align: center;
+      width: fit-content;
+      min-width: 20%;
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color-extra-linght);
+      font-size: 13px;
+      color: #999;
+    }
+  
+    #cnblogs_post_body p img {
+      width: auto;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  /************** markdown img设置 结束 ***************/

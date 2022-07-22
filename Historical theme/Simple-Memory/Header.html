@@ -1,3 +1,8 @@
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet">
+
 <script>
     // 添加二级菜单
     function addSubmenuItem(menuItemId, text, url) {
@@ -68,6 +73,7 @@
             'https://www.cnblogs.com/RioTian/p/12330051.html', 'menuItemAbout');
         $navList.cnblogsNav('addNav', index++, '🔗 Links', 'javascript:void(0)', 'menuItemLinks');
         $navList.cnblogsNav('addNav', index++, '🔑 Admin', 'https://i.cnblogs.com/', 'menuItemAdmin');
+        // $navList.cnblogsNav('addNav', index++, '📦 Comment', 'https://www.tapechat.net/uu/IIBNVC/K5O3UQ0P');
         // $navList.cnblogsNav('addNav', index++, '📧 Email','https://mail.google.com/mail/u/0/#inbox?compose=new', 'menuItemEmail');
 
 
@@ -78,21 +84,21 @@
         addSubmenuItem('menuItemLinks', '📝 NewPost', 'https://i.cnblogs.com/posts/edit');
         addSubmenuItem('menuItemLinks', '⭐ 代码片段', 'https://www.cnblogs.com/RioTian/p/14678221.html');
         addSubmenuItem('menuItemLinks', '🔍 文章搜索', 'https://zzk.cnblogs.com/my?app=Blogpost');
-        addSubmenuItem('menuItemLinks', '😸 Github', 'https://github.com/RivTian');
+        addSubmenuItem('menuItemLinks', '🐙 Github', 'https://github.com/RivTian');
         // addSubmenuItem('menuItemLinks', '📃 过客导航', 'https://yafine-blog.cn/box/#');
         addSubmenuItem('menuItemLinks', '💡 蒟蒻大佬', 'https://www.jvruo.com/index.php');
-        addSubmenuItem('menuItemLinks', '📘 sshwy\'note', 'https://notes.sshwy.name/directory/');
+        // addSubmenuItem('menuItemLinks', '📘 sshwy\'note', 'https://notes.sshwy.name/directory/');
         // addSubmenuItem('menuItemLinks', '🌟 ZeroZone', 'https://hellozhaozheng.github.io/');
-        // addSubmenuItem('menuItemLinks', '🕛 中午吃什么', 'http://chishenme.xyz/');
+        addSubmenuItem('menuItemLinks', '🕛 中午吃什么', 'http://chishenme.xyz/');
 
 
         // addSubmenuItem('menuItemLinks', '🎵 Netease', 'https://music.163.com/#/user/home?id=296366418');
         // addSubmenuItem('menuItemLinks', '💡 fogsail大佬', 'https://www.fogsail.net/');
         // addSubmenuItem('menuItemLinks', '🔋 千千大佬', 'https://www.dreamwings.cn/');
-        // addSubmenuItem('menuItemLinks', '💭 Weibo', 'https://weibo.com/sinkinben');
+        // addSubmenuItem('menuItemLinks', '💭 Weibo', '');
         // addSubmenuItem('menuItemLinks', '📘 Zhihu', 'https://www.zhihu.com/people/2heart');
-        // addSubmenuItem('menuItemLinks', '📗 Douban', 'https://www.douban.com/people/sinkinben/');
-        // addSubmenuItem('menuItemLinks', '🌎 Facebook', 'https://www.facebook.com/sinkinben/');
+        // addSubmenuItem('menuItemLinks', '📗 Douban', '');
+        // addSubmenuItem('menuItemLinks', '🌎 Facebook', '');
         // addSubmenuItem('menuItemLinks', '📧 Email', 'https://mail.google.com/mail/u/0/#inbox?compose=new');
         // addSubmenuItem('menuItemLinks', '👨‍🌾 Leetcode', 'https://leetcode-cn.com/u/murabito-b/');
 
@@ -117,10 +123,10 @@
         // document.getElementById('favicon').href ='https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_211119014306_Yuru02.png';
         // change the title logo
         var logo = document.getElementById('blogLogo');
-        logo.setAttribute('src',
-            'https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_220413065122_un-huhu.jpg');
+        logo.setAttribute('src', 'https://pic.cnblogs.com/avatar/1849509/20220721084429.png');
         logo.setAttribute('alt', 'Administrator');
-        logo.style.transform = 'rotateY(180deg)';
+        // 不注释掉旋转似乎手机端看不到 logo
+        // logo.style.transform = 'rotateY(180deg)';
         // click the title logo to jump to admin backend
         document.getElementById('lnkBlogLogo').setAttribute('href', 'https://i.cnblogs.com/');
 

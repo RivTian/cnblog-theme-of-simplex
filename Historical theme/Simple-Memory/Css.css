@@ -38,12 +38,12 @@ body {
   background-color: #e6e6e6;
 
   /* background: url("https://cdn.jsdelivr.net/gh/RivTian/Blogimg/img/20210917155542.png") fixed; */
-  background: url("https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_220322053329_%E8%81%94%E5%8A%A8%20%E7%B2%BE%E5%B9%BBand%E6%9D%80%E6%89%8B%E8%B4%B5%E6%97%8F.jpg") fixed;
+  /* background: url("https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_220322053329_%E8%81%94%E5%8A%A8%20%E7%B2%BE%E5%B9%BBand%E6%9D%80%E6%89%8B%E8%B4%B5%E6%97%8F.jpg") fixed; */
   /* background-repeat: no-repeat; */
   background-size: cover;
   /* background-attachment: fixed; */
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Georgia", "Sitka Text", "Noto Serif CJK SC", "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  font-family: -apple-system, "Bitter", BlinkMacSystemFont, "Segoe UI", "Georgia", "Sitka Text", "Noto Serif CJK SC", "Microsoft YaHei", Arial, Helvetica, sans-serif;
   font-size: 12px;
   min-height: 101%
 }
