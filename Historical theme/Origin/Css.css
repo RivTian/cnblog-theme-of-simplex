@@ -348,7 +348,7 @@ a:hover {
     background: whitesmoke;
     margin: 40px auto 20px;
     border-radius: 100px;
-    background: url(https://pic.cnblogs.com/avatar/1849509/20220721084429.png);
+    background: url(https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_220802110800_Teio_tim_fav.jpg);
     background-size: cover;
     border: 1px solid whitesmoke;
 }
@@ -2465,3 +2465,42 @@ details.warn>summary {
     _height: 35px;
     line-height: 1.6em;
 }
+
+/************** markdown img设置 开始 ***************/
+@media screen and (min-width:0) {
+    .cnblogs-markdown {
+      line-height: 1.8;
+    }
+  
+    /* 超链接悬浮出现下划线 */
+    /* .cnblogs-markdown a {
+      color: var(--color-primary);
+    } */
+  
+    .fancybox-image {
+      max-width: 100% !important;
+    }
+  
+    .img-caption {
+      text-align: center;
+      width: fit-content;
+      min-width: 20%;
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color-extra-linght);
+      font-size: 13px;
+      color: #999;
+    }
+  
+    #cnblogs_post_body p img {
+      width: auto;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  /************** markdown img设置 结束 ***************/

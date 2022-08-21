@@ -40,3 +40,34 @@
         });
     })();
 </script>
+
+
+<script>
+    // fancybox
+    $(".cnblogs-markdown img").each(function () {
+        var element = document.createElement("a");
+        // 点击增大以及点击前往另一个页面
+        // $(element).attr("data-fancybox", "gallery");
+        // $(element).attr("href", $(this).attr("src"));
+        $(element).attr('data-caption', $(this).attr("alt"));
+        $(this).wrap(element);
+        if ($(this).attr("alt") != "") {
+            $(this).parent().after('<div class="img-caption">' + $(this).attr("alt") + '</div>');
+        }
+    })
+</script>
+
+<!-- Chatra {literal} -->
+<script>
+    (function (d, w, c) {
+        w.ChatraID = 'DG4xk9nE2HXoMr7GD';
+        var s = d.createElement('script');
+        w[c] = w[c] || function () {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
