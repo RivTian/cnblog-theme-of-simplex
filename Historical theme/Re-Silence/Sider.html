@@ -1,9 +1,9 @@
 <script>
     window.$silence = {
-        avatar: 'https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_220802110800_Teio_tim_fav.jpg',
+        avatar: 'https://s.gravatar.com/avatar/97a5865ffc16c9415e700d00814aa5db?s=1024',
         favicon: 'https://cdn.jsdelivr.net/gh/RivTian/Blogimg/img/20220218112744.svg',
         github: 'https://github.com/RivTian',
-        defaultMode: 'dark',
+        defaultMode: 'light',
         defaultTheme: 'a',
         myLinks: {
             iscollapse: false,
@@ -17,13 +17,14 @@
                 },
             ]
         },
+
         catalog: {
             enable: true,
             index: true,
-            active: false,
+            active: true,
             levels: ['h2', 'h3', 'h4']
         },
-        statusKey: 'idle',
+        statusKey: 'growing',
         radarMap: {
             iscollapse: false,
             alpha: 0.85, // 数据区域透明度
@@ -68,7 +69,21 @@
         navs: [{
             title: "标签",
             href: "https://www.cnblogs.com/riotian/tag/"
-        }]
+        }],
+        menu: {
+            signature: "Time tick away, dream faded away!",
+            width: 247
+        },
+        pageOps: {
+            contentWidth: 0.65,
+            siderbarWidth: 0.18
+        },
+        signature: {
+            enable: true,
+            author: null,
+            license: ['署名-非商业性使用-相同方式共享 4.0 国际', 'https://creativecommons.org/licenses/by-nc-sa/4.0/'],
+            remark: 'Tips: 时间会解决一切',
+        },
     }
     // http://esofar.gitee.io/cnblogs-theme-silence/#/options
 </script>

@@ -1,1 +1,61 @@
 @import url(https://Enziandom.gitee.io/cnblogs-theme-silence/dist/silence.min.css);
+/*=========== 自定义 CSS  ============*/
+/* 修改分割线样式 */
+hr {
+    background-image: repeating-linear-gradient(-45deg,
+            #ddd,
+            #ddd 4px,
+            transparent 4px,
+            transparent 8px);
+    border: 0;
+    height: 3px;
+    margin: 40px 0;
+}
+
+/* 博客园插入视频CSS部分 */
+#cnblogs_post_body .video {
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    position: relative;
+    width: 100%;
+}
+
+#cnblogs_post_body .video iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+pre {
+    /* 4个空格进行缩进*/
+    tab-size: 4
+}
+
+details {
+    border-left: 4px solid orange;
+    font-size: 16px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+details.warn {
+    border-left: 4px solid orange;
+    padding: 2px 5px 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 9px 0px #d2c5c5;
+}
+
+
+details>summary {
+    padding: 0em 0em 0em 1em;
+    color: orange;
+}
+
+details.warn>summary {
+    padding: 0em 0em 0em 1em;
+    color: orange;
+}
