@@ -59,3 +59,64 @@ details.warn>summary {
     padding: 0em 0em 0em 1em;
     color: orange;
 }
+
+/************** markdown img设置 开始 ***************/
+@media screen and (min-width:0) {
+    .cnblogs-markdown {
+      line-height: 1.8;
+    }
+  
+    /* 超链接悬浮出现下划线 */
+    /* .cnblogs-markdown a {
+      color: var(--color-primary);
+    } */
+  
+    .fancybox-image {
+      max-width: 100% !important;
+    }
+  
+    .img-caption {
+      text-align: center;
+      width: fit-content;
+      min-width: 20%;
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color-extra-linght);
+      font-size: 13px;
+      color: #999;
+    }
+  
+    #cnblogs_post_body p img {
+      width: auto;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  /************** markdown img设置 结束 ***************/
+
+.postBody blockquote code,
+.feedbackCon .blog_comment_body code {
+    background: none !important;
+    color: lightslategray !important;
+}
+
+#topics .postBody blockquote {
+    border: none;
+    border-left: 5px solid CornflowerBlue;
+    border-radius: 5px;
+    background: aliceblue;
+    color: gray;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.postBody blockquote {
+    min-height: 35px;
+    _height: 35px;
+    line-height: 1.6em;
+}
