@@ -1,0 +1,132 @@
+<!-- clear unused elems -->
+<script>
+    $("head > link").remove();
+    $("#top_nav").remove();
+  </script>
+  <!-- lite style -->
+  <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/blogs/666252/index.css" />
+  <!-- lite loading style -->
+  <style>
+    #home {
+      display: none !important;
+    }
+  
+    @-webkit-keyframes loading {
+      0% {
+        opacity: 0;
+      }
+  
+      to {
+        opacity: 1;
+      }
+    }
+  
+    @keyframes loading {
+      0% {
+        opacity: 0;
+      }
+  
+      to {
+        opacity: 1;
+      }
+    }
+  
+    .dark-loading {
+      background: #222;
+    }
+  
+    .light-loading {
+      background: #fff;
+    }
+  
+    .dark-loading,
+    .light-loading {
+      font-size: 1rem !important;
+      font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif !important;
+      font-weight: 400;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      z-index: 999999;
+    }
+  
+    .box h2 {
+      font-size: 1rem !important;
+      font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif !important;
+      font-weight: 400;
+      color: #777;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+  
+    .box span {
+      font-size: 1rem !important;
+      font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif !important;
+      font-weight: 400;
+      display: inline-block;
+      vertical-align: middle;
+      width: 0.6em;
+      height: 0.6em;
+      margin: 0.19em;
+      background: #007db6;
+      border-radius: 0.6em;
+      -webkit-animation: loading 1s infinite alternate;
+      animation: loading 1s infinite alternate;
+    }
+  
+    .box span:nth-of-type(2) {
+      background: #008fb2;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+    }
+  
+    .box span:nth-of-type(3) {
+      background: #009b9e;
+      -webkit-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+    }
+  
+    .box span:nth-of-type(4) {
+      background: #00a77d;
+      -webkit-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+    }
+  
+    .box span:nth-of-type(5) {
+      background: #00b247;
+      -webkit-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+    }
+  
+    .box span:nth-of-type(6) {
+      background: #5ab027;
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+    }
+  
+    .box span:nth-of-type(7) {
+      background: #a0b61e;
+      -webkit-animation-delay: 1.2s;
+      animation-delay: 1.2s;
+    }
+  </style>
+  <!-- lite loading -->
+  <div class="dark-loading">
+    <div class="box">
+      <h2>Loading</h2>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
