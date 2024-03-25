@@ -2,6 +2,14 @@
 
 <!-- 生成博客目录的JS代码，两级目录 -->
 <script type="text/javascript">
+  // change the title logo
+  var logo = document.getElementById("blogLogo");
+  logo.setAttribute(
+    "src",
+    "https://images.cnblogs.com/cnblogs_com/RioTian/2064912/o_240304121855_IMG_1479.PNG",
+  );
+  logo.setAttribute("alt", "Administrator");
+
   /*  
         这段代码按H2、H3格式生成两级菜单
         写博客按H2、H3格式写，不然生成不了
@@ -133,6 +141,7 @@
       for (var i = 0; i < nodes.length; i++) {
         if (nodes[i].nodeName == mt || nodes[i].nodeName == st) {
           //获取标题文本
+
           var nodetext = nodes[i].innerHTML.replace(/<\/?[^>]+>/g, ""); //innerHTML里面的内容可能有HTML标签，所以用正则表达式去除HTML的标签
           // nodetext = nodetext.replace(/ /ig, "");//替换掉所有的空格
           nodetext = BlogDirectory.htmlDecode(nodetext);
