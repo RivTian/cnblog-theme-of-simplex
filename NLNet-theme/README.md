@@ -28,12 +28,12 @@ Themes for cnblogs and typora.
 
    * 保存并刷新查看效果。
 
-3. 更多效果：[传送门](https://www.cnblogs.com/liwuqingxin/p/14381825.html)
+3. 更多效果：[传送门]()
 
-![shadow-light radius12](https://cdn.jsdelivr.net/gh/liwuqingxin/nlnet-blogs@main/src/2020/imgs/0015.jpg)
+![shadow-light radius12](hhttps://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120443_cnblog.hompage.pic.jpg)
 
-![shadow-light radius12](https://cdn.jsdelivr.net/gh/liwuqingxin/nlnet-blogs@main/src/2020/imgs/0016.png)
+![shadow-light radius12](https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120634_cnblog_homepage_dark.pic.jpg)
 
-![shadow-light radius12](https://cdn.jsdelivr.net/gh/liwuqingxin/nlnet-blogs@main/src/2020/imgs/0013.png)
+![shadow-light radius12](https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120858_cnblog_post.pic.jpg)
 
-![shadow-light radius12](https://cdn.jsdelivr.net/gh/liwuqingxin/nlnet-blogs@main/src/2020/imgs/0014.jpg)
+![shadow-light radius12](https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120800_cnblog_post_dark.pic.jpg)
