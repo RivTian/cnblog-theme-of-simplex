@@ -2,7 +2,7 @@
   <a href="https://zh.wikipedia.org/wiki/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81">
     <img src="https://img.shields.io/badge/LICENSE-GNU%20GPL-green">
   </a>
-    <a href="">
+    <a href="https://www.cnblogs.com/RioTian/p/18971501">
     <img src="https://img.shields.io/badge/BLOG-NLNet-green">
   </a>
 </div>
@@ -28,7 +28,7 @@ Themes for cnblogs and typora.
 
    * 保存并刷新查看效果。
 
-3. 更多效果：[传送门]()
+3. 更多效果：[传送门](https://www.cnblogs.com/RioTian/p/18971501)
 
 ![shadow-light radius12](hhttps://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120443_cnblog.hompage.pic.jpg)
 
