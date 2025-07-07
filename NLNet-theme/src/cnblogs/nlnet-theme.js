@@ -129,7 +129,7 @@ $(document).ready(function () {
     // theme power footer
     var footer = document.getElementById("footer");
     var span = document.createElement('span');
-    span.innerHTML = '&amp; custom theme of <a href="https://github.com/RivTian/cnblog-theme-of-simplex/NLNet-theme" target="_blank">NLNet\' cnblogs theme </a>'
+    span.innerHTML = '&amp; custom theme of <a href="TODO theme repo links" target="_blank">NLNet\' cnblogs theme </a>'
     $(span).attr('class', 'esa-copyright');
     $(span).attr('id', 'nlnet_copyright');
     footer.appendChild(span);
