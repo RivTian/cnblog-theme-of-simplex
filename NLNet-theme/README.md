@@ -30,7 +30,7 @@ Themes for cnblogs and typora.
 
 3. 更多效果：[传送门](https://www.cnblogs.com/RioTian/p/18971501)
 
-![shadow-light radius12](hhttps://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120443_cnblog.hompage.pic.jpg)
+![shadow-light radius12](https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120443_cnblog.hompage.pic.jpg)
 
 ![shadow-light radius12](https://images.cnblogs.com/cnblogs_com/RioTian/1633523/o_250707120634_cnblog_homepage_dark.pic.jpg)
 
