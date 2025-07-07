@@ -1,0 +1,124 @@
+<script type="text/javascript">
+    $(function () {
+        MathJax.loader.ready().then(() => {
+            setTimeout(function () {
+                document.querySelectorAll(".detail-fold-default-closed").forEach((e) => e.removeAttribute("open"));
+            }, 100);
+        });
+    });
+</script>
+
+<script>
+    document.getElementById("favicon").href =
+      "https://cdn.jsdelivr.net/gh/RivTian/Blogimg/img/20220218112744.svg";
+      
+    hidden_block_shown = false;
+
+    function JumpToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    setTimeout(function () {
+        $("code").attr("style", "border: none !important;");
+    }, 100);
+
+    setTimeout(function () {
+        $(".hljs").attr("style", "font-family: 'Fira Code' monospace !important;");
+    }, 100);
+
+    setTimeout(function () {
+        $("#tbCommentBody").attr("placeholder", "Leave a comment!");
+    }, 500);
+
+    setTimeout(function () {
+        $("#hid-block-btn").attr("onclick", "show_hide_block()");
+    }, 100);
+
+    function full() {
+        $("#topics").attr("style", "position: absolute; top: 0; left: 0; z-index: 10;");
+        $("#hid").attr("style", "display: block");
+        $("#show").attr("style", "display: none");
+        $("#hid_2").attr("style", "display: block");
+        $("#show_2").attr("style", "display: none");
+        $(".post").attr("style", "padding: 20px 15% 20px 15%");
+    }
+
+    function fresh() {
+        location.reload(true);
+    }
+
+    function show_hide_block() {
+        if (hidden_block_shown === false) {
+            $("#hid-block").attr("style", "display: block");
+        } else {
+            $("#hid-block").attr("style", "display: none");
+        }
+        hidden_block_shown = !hidden_block_shown;
+    }
+</script>
+
+<div id="floating-controls">
+    <div
+        style="
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            text-align: center;
+            z-index: 100;
+        "
+        onclick="JumpToTop()"
+        id="top_btn"
+        class="bottom-right-buttons"
+    >
+        <img src="https://s1.ax1x.com/2020/07/18/U2GUUK.png" style="height: 55%; width: 55%; margin-top: 10px" />
+    </div>
+
+    <img
+        src="https://s1.ax1x.com/2020/07/18/U28XjA.png"
+        style="height: 33px; width: 33px; position: fixed; bottom: 137px; right: 63.5px; z-index: 110"
+    />
+    <img src="https://s1.ax1x.com/2020/07/23/ULsHgI.png" class="tmp" onclick="full()" id="show_2" />
+    <img src="https://s1.ax1x.com/2020/07/23/ULs78A.png" class="tmp" onclick="fresh()" id="hid_2" />
+    <div
+        style="height: 60px; width: 60px; border-radius: 30px; text-align: center; z-index: 100"
+        class="bottom-right-buttons diggit"
+    ></div>
+    <div
+        style="height: 60px; width: 60px; border-radius: 30px; text-align: center; z-index: 100"
+        onclick="full()"
+        class="bottom-right-buttons full-screen"
+        id="show"
+    ></div>
+    <div
+        style="height: 60px; width: 60px; border-radius: 30px; text-align: center; z-index: 100"
+        onclick="fresh()"
+        class="bottom-right-buttons full-screen"
+        id="hid"
+    ></div>
+</div>
+
+<style>
+    img:hover {
+        cursor: pointer;
+    }
+
+    .tmp {
+        height: 33px;
+        width: 33px;
+        position: fixed;
+        bottom: 207px;
+        right: 65px;
+        z-index: 1100;
+    }
+
+    #hid {
+        display: none;
+    }
+
+    #hid_2 {
+        display: none;
+    }
+</style>
