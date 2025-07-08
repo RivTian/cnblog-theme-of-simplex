@@ -1,5 +1,4 @@
 	:root[mode=light] {
-	--loading-bg-color: #b0b0b0;
 	--blog-body-bg-color: #f4f4f4;
 	--blog-bg-color: #fff;
 	--text-color: #596172;
@@ -21,7 +20,6 @@
 }
 
 :root[mode=dark] {
-	--loading-bg-color: #b0b0b0;
 	--blog-body-bg-color: #202020;
 	--blog-bg-color: #202020;
 	--text-color: #c8c8c8;
