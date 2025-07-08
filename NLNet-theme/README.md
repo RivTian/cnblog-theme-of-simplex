@@ -22,9 +22,11 @@ Themes for cnblogs and typora.
 
    * 部署Theme Silence v3.0.0主题。具体参考：[Theme Silence v3.0.0](https://github.com/esofar/cnblogs-theme-silence)。
 
-   * 将src/cnblogs/silence/cnblogs-css-content.css的内容复制到博客园的`管理`-`设置`-`页面定制CSS代码框`中。
+   * 将 `src/cnblogs/silence/cnblogs-css-content.css` 的内容复制到博客园的`管理`-`设置`-`页面定制CSS代码框`中。
 
-   * 将src/cnblogs/silence/cnblogs-js-content.html的内容复制到博客园的`管理`-`设置`-`博客侧边栏公告框`中。
+   * 将 `src/cnblogs/silence/cnblogs-script-content.html` 的内容复制到博客园的`管理`-`设置`-`博客侧边栏公告框`中。
+  
+   * 将 `src/cnblogs/silence/cnblogs-script-header.html` 的内容复制到博客园的 `管理`-`设置`-`博客园首页代码框`中 
 
    * 保存并刷新查看效果。
 
